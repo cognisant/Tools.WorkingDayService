@@ -8,32 +8,32 @@ namespace CR.WorkingDayService
     using System.Collections.Generic;
     using System.Linq;
 
-    /// <inheritdoc />
     /// <summary>
-    /// A Working Day Service which can have IWorkingDaySources registered to it. The service will use all of its registered IWorkingDaySources to determine whether a given DateTime is on a Working Day or Non-Working Day.
+    /// A service which can determine whether a given <see cref="DateTime"/> is on a working day.
     /// </summary>
     public sealed class WorkingDayService : IWorkingDaySource
     {
         private readonly IReadOnlyCollection<IWorkingDaySource> _sources;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="WorkingDayService"/> class using the provided IWorkingDaySources to determine whether any given date is on a Working Day, or a Non-Working Day.
+        /// Initializes a new instance of the <see cref="WorkingDayService"/> class.
         /// </summary>
-        /// <param name="sources">The IWorkingDaySources to use to determine whether a given DateTime is on a Working Day, or a Non-Working Day. If no Sources are specified, all days are considered Working Days.</param>
+        /// <param name="sources">The <see cref="IWorkingDaySource"/>s to use to determine whether a given <see cref="DateTime"/> is on a working day, or a non-working day.
+        /// If no sources are specified, all days are considered working days.</param>
         public WorkingDayService(IReadOnlyCollection<IWorkingDaySource> sources) => _sources = sources;
 
         /// <inheritdoc />
         /// <summary>
-        /// Checks the registered IWorkingDaySources and returns true if any of them say that the provided DateTime is on a Working Day.
-        /// If there are not IWorkingDaySources registered, all days are considered Working Days.
+        /// Uses the <see cref="WorkingDayService"/>'s registered <see cref="IWorkingDaySource"/>s to determine if a particular <see cref="DateTime"/> is on a working day.
+        /// If there are no sources registered, all days are considered working days.
         /// </summary>
         public bool IsWorkingDay(DateTime date) => _sources == null || _sources.Count == 0 || _sources.Any(source => source.IsWorkingDay(date));
 
         /// <summary>
-        /// Gets the Next Working Day from the provided DateTime.
+        /// Gets the next working day after the provided <see cref="DateTime"/>.
         /// </summary>
-        /// <param name="date">The DateTime to count from.</param>
-        /// <returns>The next Working Day after the provided DateTime.</returns>
+        /// <param name="date">The <see cref="DateTime"/> after which the soonest working day should be identified.</param>
+        /// <returns>The <see cref="DateTime"/> of the next working day after the provided date.</returns>
         public DateTime NextWorkingDay(DateTime date)
         {
             do
@@ -45,10 +45,10 @@ namespace CR.WorkingDayService
         }
 
         /// <summary>
-        /// Gets the Previous Working Day from the provided DateTime.
+        /// Gets the most recent working day from before the provided <see cref="DateTime"/>.
         /// </summary>
-        /// <param name="date">The DateTime to count from.</param>
-        /// <returns>The last Working Day before the provided DateTime.</returns>
+        /// <param name="date">The <see cref="DateTime"/> before which the most recent working day should be identified.</param>
+        /// <returns>The <see cref="DateTime"/> of the most recent working day before the provided date.</returns>
         public DateTime PreviousWorkingDay(DateTime date)
         {
             do
@@ -60,11 +60,11 @@ namespace CR.WorkingDayService
         }
 
         /// <summary>
-        /// Add the specified number of working days to the provided DateTime.
+        /// Gets the date of the day on the provided number of working days after the provided <see cref="DateTime"/>.
         /// </summary>
-        /// <param name="numberToAdd">The number of working days to add.</param>
-        /// <param name="date">The DateTime to add working days to.</param>
-        /// <returns>A DateTime equal to the original DateTime plus however many days need to pass before the specified number of working days have passed.</returns>
+        /// <param name="numberToAdd">The number of working days to add to the provided date.</param>
+        /// <param name="date">The <see cref="DateTime"/> to which working days should be added.</param>
+        /// <returns>The <see cref="DateTime"/> of the day on the provided number of working days after the provided date.</returns>
         public DateTime AddWorkingDays(uint numberToAdd, DateTime date)
         {
             for (var i = 0; i < numberToAdd; i++)
@@ -80,11 +80,11 @@ namespace CR.WorkingDayService
         }
 
         /// <summary>
-        /// Subtract the specified number of working days from the provided DateTime.
+        /// Gets the date of the day on the provided number of working days before the provided <see cref="DateTime"/>.
         /// </summary>
-        /// <param name="numberToSubtract">The number of working days to subtract.</param>
-        /// <param name="date">The DateTime to subtract working days from.</param>
-        /// <returns>A DateTime equal to the original DateTime minus however many days have passed since it was the specified number of working days away from the provided DateTime.</returns>
+        /// <param name="numberToSubtract">The number of working days to subtract from the provided date.</param>
+        /// <param name="date">The <see cref="DateTime"/> to subtract working days from.</param>
+        /// <returns>The <see cref="DateTime"/> of the day on the provided number of working days before the provided date.</returns>
         public DateTime SubtractWorkingDays(uint numberToSubtract, DateTime date)
         {
             for (var i = 0; i < numberToSubtract; i++)
