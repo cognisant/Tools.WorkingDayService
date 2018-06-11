@@ -26,16 +26,16 @@ namespace CR.WorkingDayService
         public static WorkingDayServiceBuilder New() => new WorkingDayServiceBuilder();
 
         /// <summary>
-        /// Build a WorkingDayService from the configuration which has been built.
+        /// Builds a <see cref="WorkingDayService"/> with the configured set of <see cref="IWorkingDaySource"/>s.
         /// </summary>
-        /// <returns>A WorkingDayService with the configured Sources.</returns>
+        /// <returns>A <see cref="WorkingDayService"/> which uses the <see cref="IWorkingDaySource"/>s in the <see cref="WorkingDayServiceBuilder"/>'s <c>_sources</c>.</returns>
         public WorkingDayService Build() => new WorkingDayService(_sources.ToList());
 
         /// <summary>
-        /// Configure the WorkingDayServiceBuilder to use the specified source as well as any previously configured ones.
+        /// Configure the <see cref="WorkingDayServiceBuilder"/> to use the specified <see cref="IWorkingDaySource"/> in addition to its current sources.
         /// </summary>
-        /// <param name="source">The Source to add (should be unique; adding one source multiple times will only add it once).</param>
-        /// <returns>The same instance of the WorkingDayServiceBuilder with all of the previously configured sources, and the new source which was passed in.</returns>
+        /// <param name="source">The <see cref="IWorkingDaySource"/> to add.</param>
+        /// <returns>The same instance of the <see cref="WorkingDayServiceBuilder"/> with all of its current sources, and the new <see cref="IWorkingDaySource"/> which was passed in.</returns>
         public WorkingDayServiceBuilder AddSource(IWorkingDaySource source)
         {
             _sources.Add(source);
@@ -43,10 +43,10 @@ namespace CR.WorkingDayService
         }
 
         /// <summary>
-        /// Configure the WorkingDayServiceBuilder to use only the specified source.
+        /// Configures the <see cref="WorkingDayServiceBuilder"/> to only use the passed in <see cref="IWorkingDaySource"/>.
         /// </summary>
-        /// <param name="source">The Source to use.</param>
-        /// <returns>The same instance of the WorkingDayServiceBuilder with all of the previously configured sources replaced with the new source which was passed in.</returns>
+        /// <param name="source">The <see cref="IWorkingDaySource"/> to use.</param>
+        /// <returns>The same instance of the <see cref="WorkingDayServiceBuilder"/> using only the <see cref="IWorkingDaySource"/> which was passed in. All all of its current sources will be removed.</returns>
         public WorkingDayServiceBuilder UseSource(IWorkingDaySource source)
         {
             _sources.Clear();
@@ -54,17 +54,17 @@ namespace CR.WorkingDayService
         }
 
         /// <summary>
-        /// Configure the WorkingDayServiceBuilder to use only the specified sources.
+        /// Configure the <see cref="WorkingDayServiceBuilder"/> to only use the specified sources.
         /// </summary>
-        /// <param name="sources">The Sources to use (they should be unique; adding the same source multiple times will result in it only being added once).</param>
-        /// <returns>The same instance of the WorkingDayServiceBuilder with its previously configured sources replaced with the ones provided to this method.</returns>
+        /// <param name="sources">The <see cref="IWorkingDaySource"/>s the <see cref="WorkingDayService"/> should use. Sources should be unique; adding the same source multiple times will result in it only being added once.</param>
+        /// <returns>The same instance of the <see cref="WorkingDayServiceBuilder"/> using only the <see cref="IWorkingDaySource"/>s which have been passed in. All all of its current sources will be removed.</returns>
         public WorkingDayServiceBuilder UseSources(params WorkingDayService[] sources) => UseSources((IEnumerable<IWorkingDaySource>)sources);
 
         /// <summary>
-        /// Configure the WorkingDayServiceBuilder to use only the specified sources.
+        /// Configure the <see cref="WorkingDayServiceBuilder"/> to only use the specified sources.
         /// </summary>
-        /// <param name="sources">The Sources to use (they should be unique; adding the same source multiple times will result in it only being added once).</param>
-        /// <returns>The same instance of the WorkingDayServiceBuilder with its previously configured sources replaced with the ones provided to this method.</returns>
+        /// <param name="sources">An <see cref="IEnumerable{T}"/> of the <see cref="IWorkingDaySource"/>s to use. The sources should be unique; adding the same source multiple times will result in it only being added once.</param>
+        /// <returns>The same instance of the <see cref="WorkingDayServiceBuilder"/> using only the <see cref="IWorkingDaySource"/>s contained in the <see cref="IEnumerable{T}"/> which has been passed in. All all of its current sources will be removed.</returns>
         public WorkingDayServiceBuilder UseSources(IEnumerable<IWorkingDaySource> sources)
         {
             _sources.Clear();
@@ -72,17 +72,17 @@ namespace CR.WorkingDayService
         }
 
         /// <summary>
-        /// Configure the WorkingDayServiceBuilder to use the specified sources as well as any previously configured ones.
+        /// Configures the <see cref="WorkingDayServiceBuilder"/> to use the specified <see cref="IWorkingDaySource"/>s in addition to its current sources.
         /// </summary>
-        /// <param name="sources">The Sources to add (they should be unique; adding the same source multiple times will result in it only being added once).</param>
-        /// <returns>The same instance of the WorkingDayServiceBuilder with its previously configured sources as well as the ones provided to this method.</returns>
-        public WorkingDayServiceBuilder AddSources(params WorkingDayService[] sources) => AddSources((IEnumerable<IWorkingDaySource>)sources);
+        /// <param name="sources">The <see cref="IWorkingDaySource"/>s to add (they should be unique; adding the same source multiple times will result in it only being added once).</param>
+        /// <returns>The same instance of the <see cref="WorkingDayServiceBuilder"/> with all of its current sources, and the new <see cref="IWorkingDaySource"/>s which have been passed in.</returns>
+        public WorkingDayServiceBuilder AddSources(params IWorkingDaySource[] sources) => AddSources((IEnumerable<IWorkingDaySource>)sources);
 
         /// <summary>
-        /// Configure the WorkingDayServiceBuilder to use the specified sources as well as any previously configured ones.
+        /// Configures the <see cref="WorkingDayServiceBuilder"/> to use the specified sources in addition to its current sources.
         /// </summary>
-        /// <param name="sources">The Sources to add (they should be unique; adding the same source multiple times will result in it only being added once).</param>
-        /// <returns>The same instance of the WorkingDayServiceBuilder with its previously configured sources as well as the ones provided to this method.</returns>
+        /// <param name="sources">An <see cref="IEnumerable{T}"/> of the <see cref="IWorkingDaySource"/>s to add (they should be unique; adding the same source multiple times will result in it only being added once).</param>
+        /// <returns>The same instance of the <see cref="WorkingDayServiceBuilder"/> with all of its current sources, and the <see cref="IWorkingDaySource"/>s contained in the <see cref="IEnumerable{T}"/> which has been passed in.</returns>
         public WorkingDayServiceBuilder AddSources(IEnumerable<IWorkingDaySource> sources)
         {
             foreach (var source in sources)
