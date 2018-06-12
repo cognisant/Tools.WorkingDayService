@@ -8,24 +8,24 @@ namespace CR.WorkingDayService.StringSource
 
     /// <inheritdoc cref="IWorkingDaySource"/>
     /// <summary>
-    /// An implementation of IWorkingDaySource which uses of a string to determine whether a given DateTime is on a Working Day or a Non-Working Day.
+    /// An implementation of <see cref="IWorkingDaySource"/> which uses the content of a <see cref="string"/> to determine if a given <see cref="DateTime"/> is on a Working Day or a Non-Working Day.
     /// </summary>
     public class StringWorkingDaySource<T> : IWorkingDaySource
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="StringWorkingDaySource{T}"/> class.
         /// </summary>
-        /// <param name="content">The string content of the state.</param>
-        /// <param name="parseAction">The action to get the state from the content.</param>
-        /// <param name="checkAction">The action to get whether a DateTime is on a Working Day based on the current state.</param>
+        /// <param name="content">The <see cref="string"/> who's content the new <see cref="StringWorkingDaySource{T}"/> should be based on.</param>
+        /// <param name="parseAction">The action used to build the internal state of the <see cref="StringWorkingDaySource{T}"/> from the provided <see cref="string"/>.</param>
+        /// <param name="checkAction">The action used to determine if a <see cref="DateTime"/> is on a Working Day (using the <see cref="StringWorkingDaySource{T}"/> based on the provided <see cref="string"/>).</param>
         public StringWorkingDaySource(string content, Func<string, T> parseAction, Func<DateTime, T, bool> checkAction)
             : this(parseAction, checkAction) => State = parseAction(content);
 
         /// <summary>
         /// Initializes a new instance of the <see cref="StringWorkingDaySource{T}"/> class.
         /// </summary>
-        /// <param name="parseAction">The action to get the state from the content content.</param>
-        /// <param name="checkAction">The action to get whether a DateTime is on a Working Day based on the current state.</param>
+        /// <param name="parseAction">The action used to build the internal state of the <see cref="StringWorkingDaySource{T}"/> from the provided <see cref="string"/>.</param>
+        /// <param name="checkAction">The action to get whether a <see cref="DateTime"/> is on a Working Day based on the current state.</param>
         protected StringWorkingDaySource(Func<string, T> parseAction, Func<DateTime, T, bool> checkAction)
         {
             CheckAction = checkAction ?? throw new ArgumentNullException(nameof(parseAction));
@@ -33,17 +33,17 @@ namespace CR.WorkingDayService.StringSource
         }
 
         /// <summary>
-        /// Gets the action to check whether a DateTime is on a Working Day based on the internal state of the String Working Day Source.
+        /// Gets the action used to check whether a <see cref="DateTime"/> is on a Working Day (using the <see cref="StringWorkingDaySource{T}"/>).
         /// </summary>
         protected Func<DateTime, T, bool> CheckAction { get; }
 
         /// <summary>
-        /// Gets the action to parse a string into the internal state of the String Working Day Source.
+        /// Gets the action used to parse a <see cref="string"/> into the internal state of the <see cref="StringWorkingDaySource{T}"/>.
         /// </summary>
         protected Func<string, T> ParseAction { get; }
 
         /// <summary>
-        /// Gets or sets the current internal state of the String Working Day Source.
+        /// Gets or sets the current internal state of the <see cref="StringWorkingDaySource{T}"/>.
         /// </summary>
         protected T State { get; set; }
 

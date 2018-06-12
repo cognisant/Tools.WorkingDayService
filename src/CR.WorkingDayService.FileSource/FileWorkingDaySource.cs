@@ -11,18 +11,19 @@ namespace CR.WorkingDayService.FileSource
     /// <inheritdoc cref="IWorkingDaySource"/>
     /// <inheritdoc cref="IDisposable"/>
     /// <summary>
-    /// An implementation of IWorkingDaySource which uses the returned content of a File to determine whether a given DateTime is on a Working Day or a Non-Working Day.
+    /// An implementation of <see cref="StringWorkingDaySource{T}"/> which uses the content of a File to determine whether a given <see cref="DateTime"/> is on a Working Day or a Non-Working Day.
     /// </summary>
     public sealed class FileWorkingDaySource<T> : StringWorkingDaySource<T>, IDisposable
     {
         private readonly FileSystemWatcher _fileWatcher;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="FileWorkingDaySource{T}"/> class with a file watcher that watched the provided filepath and updates a state of type T based on its content, which is used to check whether a given DateTime is on a Working Day or a Non-Working Day.
+        /// Initializes a new instance of the <see cref="FileWorkingDaySource{T}"/> class with a <see cref="FileSystemWatcher"/> that watches the file at the provided file path and updates its internal state with any new content.
+        /// The internal state is used to determine if a given <see cref="DateTime"/> is on a Working Day or a Non-Working Day.
         /// </summary>
-        /// <param name="filePath">The File to watch and get the state from.</param>
-        /// <param name="parseFileContentAction">The action to get the state from the file's content.</param>
-        /// <param name="checkAction">The action to get whether a DateTime is on a Working Day based on the current state from the file.</param>
+        /// <param name="filePath">The path to the file who's content should be used to create and update the <see cref="FileWorkingDaySource{T}"/>.</param>
+        /// <param name="parseFileContentAction">The action used to build the internal state of the <see cref="FileWorkingDaySource{T}"/> from the content of the file at the provided file path.</param>
+        /// <param name="checkAction">The action used to determine if a <see cref="DateTime"/> is on a Working Day (using the <see cref="FileWorkingDaySource{T}"/> based on the file at the provided file path).</param>
         public FileWorkingDaySource(string filePath, Func<string, T> parseFileContentAction, Func<DateTime, T, bool> checkAction)
             : base(parseFileContentAction, checkAction)
         {

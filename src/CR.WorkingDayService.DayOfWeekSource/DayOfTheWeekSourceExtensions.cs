@@ -8,7 +8,7 @@ namespace CR.WorkingDayService.DayOfWeekSource
     using System.Collections.Generic;
 
     /// <summary>
-    /// An Extension Methods class containing methods for configuring a the <see cref="WorkingDayServiceBuilder"/> to use <see cref="DayOfTheWeekWorkingDaySource"/>s.
+    /// An Extension Methods class containing methods for configuring a <see cref="WorkingDayServiceBuilder"/> to use <see cref="DayOfTheWeekWorkingDaySource"/>s.
     /// </summary>
     public static class DayOfTheWeekSourceExtensions
     {
