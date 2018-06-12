@@ -7,31 +7,31 @@ namespace CR.WorkingDayService.FileSource
     using System;
 
     /// <summary>
-    /// An Extension Methods class containing methods relating to the FileWorkingDaySource.
+    /// An Extension Methods class containing methods for configuring a <see cref="WorkingDayServiceBuilder"/> to use <see cref="FileWorkingDaySource{T}"/>s.
     /// </summary>
     public static class FileSourceExtensions
     {
         /// <summary>
-        /// Configure the WorkingDayServiceBuilder to use only a File Source.
+        /// Configures a <see cref="WorkingDayServiceBuilder"/> to only use a <see cref="FileWorkingDaySource{T}"/>.
         /// </summary>
-        /// <typeparam name="T">The type of the internal state for the File Working Day Source.</typeparam>
+        /// <typeparam name="T">The type of the internal state for the <see cref="FileWorkingDaySource{T}"/>.</typeparam>
         /// <param name="builder">The Builder to configure.</param>
-        /// <param name="filePath">The path for the file to use for the internal state of the File Working Day Source.</param>
-        /// <param name="parseFileContentAction">The action to build the internal state of the File Working Day Source from the content of the provided file.</param>
-        /// <param name="checkAction">The action to get whether a given DateTime is on a Working Day based on the current internal State.</param>
-        /// <returns>The updated WorkingDayServiceBuilder.</returns>
+        /// <param name="filePath">The path to the file which should be used to create the <see cref="FileWorkingDaySource{T}"/>.</param>
+        /// <param name="parseFileContentAction">The action to build the internal state of the <see cref="FileWorkingDaySource{T}"/> from the content of the file at the provided file path.</param>
+        /// <param name="checkAction">The action used to determine if a <see cref="DateTime"/> is on a Working Day (using the <see cref="FileWorkingDaySource{T}"/>).</param>
+        /// <returns>The same instance of a <see cref="WorkingDayServiceBuilder"/> only using the new <see cref="FileWorkingDaySource{T}"/> configured with the file at the provided file path.</returns>
         public static WorkingDayServiceBuilder UseFileSource<T>(this WorkingDayServiceBuilder builder, string filePath, Func<string, T> parseFileContentAction, Func<DateTime, T, bool> checkAction)
             => builder.UseSource(new FileWorkingDaySource<T>(filePath, parseFileContentAction, checkAction));
 
         /// <summary>
-        /// Configure the WorkingDayServiceBuilder to use a File Source as well as any previously registered Sources.
+        /// Configures a <see cref="WorkingDayServiceBuilder"/> to use a <see cref="FileWorkingDaySource{T}"/> in addition to its current sources.
         /// </summary>
-        /// <typeparam name="T">The type of the internal state for the File Working Day Source.</typeparam>
+        /// <typeparam name="T">The type of the internal state for the <see cref="FileWorkingDaySource{T}"/>.</typeparam>
         /// <param name="builder">The Builder to configure.</param>
-        /// <param name="filePath">The path for the file to use for the internal state of the File Working Day Source.</param>
-        /// <param name="parseFileContentAction">The action to build the internal state of the File Working Day Source from the content of the provided file.</param>
-        /// <param name="checkAction">The action to get whether a given DateTime is on a Working Day based on the current internal State.</param>
-        /// <returns>The updated WorkingDayServiceBuilder.</returns>
+        /// <param name="filePath">The path to the file to which should be used to create the <see cref="FileWorkingDaySource{T}"/>.</param>
+        /// <param name="parseFileContentAction">The action to build the internal state of the File Working Day Source from the content of the file at the provided file path.</param>
+        /// <param name="checkAction">The action used to determine if a <see cref="DateTime"/> is on a Working Day (using the <see cref="FileWorkingDaySource{T}"/>).</param>
+        /// <returns>The same instance of a <see cref="WorkingDayServiceBuilder"/> using the new <see cref="FileWorkingDaySource{T}"/> configured with the file at the provided file path, in addition to its current sources.</returns>
         public static WorkingDayServiceBuilder AddFileSource<T>(this WorkingDayServiceBuilder builder, string filePath, Func<string, T> parseFileContentAction, Func<DateTime, T, bool> checkAction)
             => builder.AddSource(new FileWorkingDaySource<T>(filePath, parseFileContentAction, checkAction));
     }
