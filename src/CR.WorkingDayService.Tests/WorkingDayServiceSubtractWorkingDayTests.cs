@@ -14,7 +14,7 @@ namespace CR.WorkingDayService.Tests
     [TestFixture]
     public sealed class WorkingDayServiceSubtractWorkingDayTests
     {
-        private static readonly WorkingDayService WorkingDayService = new WorkingDayService(new List<WorkingDaySource> { new MondayWorkingDayTestSource(), new TuesdayWorkingDayTestSource() });
+        private static readonly WorkingDayService WorkingDayService = new WorkingDayService(new List<NonWorkingDaySource> { new MondayNonWorkingDayTestSource(), new TuesdayNonWorkingDayTestSource() });
 
         /// <summary>
         /// Test to ensure that PreviousWorkingDay returns the correct DateTime (previous working day with the time preserved).
