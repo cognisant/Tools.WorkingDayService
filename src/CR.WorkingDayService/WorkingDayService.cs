@@ -69,11 +69,7 @@ namespace CR.WorkingDayService
         {
             for (var i = 0; i < numberToAdd; i++)
             {
-                do
-                {
-                    date = date.AddDays(1);
-                }
-                while (this.IsNonWorkingDay(date));
+                date = NextWorkingDay(date);
             }
 
             return date;
@@ -89,11 +85,7 @@ namespace CR.WorkingDayService
         {
             for (var i = 0; i < numberToSubtract; i++)
             {
-                do
-                {
-                    date = date.AddDays(-1);
-                }
-                while (this.IsNonWorkingDay(date));
+                date = PreviousWorkingDay(date);
             }
 
             return date;
