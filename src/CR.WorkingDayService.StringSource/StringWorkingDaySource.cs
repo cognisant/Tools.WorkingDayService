@@ -6,11 +6,11 @@ namespace CR.WorkingDayService.StringSource
 {
     using System;
 
-    /// <inheritdoc cref="IWorkingDaySource"/>
+    /// <inheritdoc cref="WorkingDaySource"/>
     /// <summary>
-    /// An implementation of <see cref="IWorkingDaySource"/> which uses the content of a <see cref="string"/> to determine if a given <see cref="DateTime"/> is on a Working Day or a Non-Working Day.
+    /// An implementation of <see cref="WorkingDaySource"/> which uses the content of a <see cref="string"/> to determine if a given <see cref="DateTime"/> is on a Working Day or a Non-Working Day.
     /// </summary>
-    public class StringWorkingDaySource<T> : IWorkingDaySource
+    public class StringWorkingDaySource<T> : WorkingDaySource
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="StringWorkingDaySource{T}"/> class.
@@ -48,7 +48,7 @@ namespace CR.WorkingDayService.StringSource
         protected T State { get; set; }
 
         /// <inheritdoc />
-        public bool IsWorkingDay(DateTime date)
+        public override bool IsWorkingDay(DateTime date)
         {
             lock (State)
             {

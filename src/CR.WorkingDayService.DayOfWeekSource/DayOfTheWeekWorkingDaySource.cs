@@ -9,9 +9,9 @@ namespace CR.WorkingDayService.DayOfWeekSource
 
     /// <inheritdoc />
     /// <summary>
-    /// An implementation of <see cref="IWorkingDaySource"/> which uses the <see cref="DayOfWeek"/> of the provided <see cref="DateTime"/> to determine whether the day is a Working Day or Non-Working Day.
+    /// An implementation of <see cref="WorkingDaySource"/> which uses the <see cref="DayOfWeek"/> of the provided <see cref="DateTime"/> to determine whether the day is a Working Day or Non-Working Day.
     /// </summary>
-    public sealed class DayOfTheWeekWorkingDaySource : IWorkingDaySource
+    public sealed class DayOfTheWeekWorkingDaySource : WorkingDaySource
     {
         private static readonly IEnumerable<DayOfWeek> WeekDays = new HashSet<DayOfWeek> { DayOfWeek.Monday, DayOfWeek.Tuesday, DayOfWeek.Wednesday, DayOfWeek.Thursday, DayOfWeek.Friday };
 
@@ -32,6 +32,6 @@ namespace CR.WorkingDayService.DayOfWeekSource
         }
 
         /// <inheritdoc />
-        public bool IsWorkingDay(DateTime date) => _workingDays.Contains(date.DayOfWeek);
+        public override bool IsWorkingDay(DateTime date) => _workingDays.Contains(date.DayOfWeek);
     }
 }

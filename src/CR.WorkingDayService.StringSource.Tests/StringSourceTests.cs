@@ -15,7 +15,7 @@ namespace CR.WorkingDayService.StringSource.Tests
     [TestFixture]
     public sealed class StringSourceTests
     {
-        private static readonly WorkingDayService WorkingDayService = new WorkingDayService(new List<IWorkingDaySource> { new StringWorkingDaySource<IReadOnlyList<DateTime>>("2018/05/14,2018/05/15", ParseMethod, CheckMethod) });
+        private static readonly WorkingDayService WorkingDayService = new WorkingDayService(new List<WorkingDaySource> { new StringWorkingDaySource<IReadOnlyList<DateTime>>("2018/05/14,2018/05/15", ParseMethod, CheckMethod) });
 
         /// <summary>
         /// Checks that a Working Day Service with a String Source's IsWorkingDay method returns true when passed a working day.

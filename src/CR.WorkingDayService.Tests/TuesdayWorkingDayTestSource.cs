@@ -7,9 +7,9 @@ namespace CR.WorkingDayService.Tests
     using System;
 
     /// <inheritdoc />
-    internal sealed class TuesdayWorkingDayTestSource : IWorkingDaySource
+    internal sealed class TuesdayWorkingDayTestSource : WorkingDaySource
     {
         /// <inheritdoc />
-        public bool IsWorkingDay(DateTime date) => date.DayOfWeek == DayOfWeek.Tuesday;
+        public override bool IsWorkingDay(DateTime date) => date.DayOfWeek == DayOfWeek.Tuesday;
     }
 }
