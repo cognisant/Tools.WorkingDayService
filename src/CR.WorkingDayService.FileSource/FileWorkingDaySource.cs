@@ -8,7 +8,7 @@ namespace CR.WorkingDayService.FileSource
     using System.IO;
     using StringSource;
 
-    /// <inheritdoc cref="IWorkingDaySource"/>
+    /// <inheritdoc cref="StringWorkingDaySource{T}"/>
     /// <inheritdoc cref="IDisposable"/>
     /// <summary>
     /// An implementation of <see cref="StringWorkingDaySource{T}"/> which uses the content of a File to determine whether a given <see cref="DateTime"/> is on a Working Day or a Non-Working Day.
