@@ -17,19 +17,7 @@ namespace CR.WorkingDayService.GovUkJsonSource
     public static class GovUkBankHolidayJsonSourceExtensions
     {
         /// <summary>
-        /// Configures the <see cref="WorkingDayServiceBuilder"/> to only use a <see cref="NonWorkingDaySource"/> based on the UK's Bank Holidays.
-        /// </summary>
-        /// <remarks>
-        /// The source is based on a <see cref="HttpNonWorkingDaySource{T}"/> created using the UK Government's Bank Holidays JSON API Endpoint.
-        /// </remarks>
-        /// <param name="builder">The <see cref="WorkingDayServiceBuilder"/> to configure to use the UK Bank Holidays for Working Day detection.</param>
-        /// <param name="refreshTime">The time interval for which the <see cref="WorkingDayService"/> should wait between attempted refreshes of the Bank Holiday list (on failure to update, the state will not change).</param>
-        /// <returns>The same instance of a <see cref="WorkingDayServiceBuilder"/> using only the UK Bank Holidays <see cref="NonWorkingDaySource"/>.</returns>
-        public static WorkingDayServiceBuilder UseGovUkBankHolidayJsonSource(this WorkingDayServiceBuilder builder, TimeSpan refreshTime)
-            => builder.UseSource(GovUkBankHolidayJsonSource(refreshTime));
-
-        /// <summary>
-        /// Configures the <see cref="WorkingDayServiceBuilder"/> to use a <see cref="NonWorkingDaySource"/> based on the UK's Bank Holidays.
+        /// Configures the <see cref="WorkingDayServiceBuilder"/> to use a <see cref="NonWorkingDaySource"/> based on the UK's Bank Holidays, in addition to its current sources.
         /// </summary>
         /// <remarks>
         /// The source is based on a <see cref="HttpNonWorkingDaySource{T}"/> created using the UK Government's Bank Holidays JSON API Endpoint.
@@ -38,7 +26,7 @@ namespace CR.WorkingDayService.GovUkJsonSource
         /// <param name="refreshTime">The time interval for which the <see cref="WorkingDayService"/> should wait between attempted refreshes of the Bank Holiday list (on failure to update, the state will not change).</param>
         /// <returns>The same instance of a <see cref="WorkingDayServiceBuilder"/> using the UK Bank Holidays <see cref="NonWorkingDaySource"/> in addition to its current sources.</returns>
         public static WorkingDayServiceBuilder AddGovUkBankHolidayJsonSource(this WorkingDayServiceBuilder builder, TimeSpan refreshTime)
-            => builder.AddSource(GovUkBankHolidayJsonSource(refreshTime));
+            => builder.WithSource(GovUkBankHolidayJsonSource(refreshTime));
 
         /// <summary>
         /// Parses bank holiday dates from a UK Government Bank Holiday JSON <see cref="string"/>.

@@ -12,18 +12,6 @@ namespace CR.WorkingDayService.FileSource
     public static class FileSourceExtensions
     {
         /// <summary>
-        /// Configures a <see cref="WorkingDayServiceBuilder"/> to only use a <see cref="FileNonWorkingDaySource{T}"/>.
-        /// </summary>
-        /// <typeparam name="T">The type of the internal state for the <see cref="FileNonWorkingDaySource{T}"/>.</typeparam>
-        /// <param name="builder">The Builder to configure.</param>
-        /// <param name="filePath">The path to the file which should be used to create the <see cref="FileNonWorkingDaySource{T}"/>.</param>
-        /// <param name="parseFileContentAction">The action to build the internal state of the <see cref="FileNonWorkingDaySource{T}"/> from the content of the file at the provided file path.</param>
-        /// <param name="checkAction">The action used to determine if a <see cref="DateTime"/> is on a Working Day (using the <see cref="FileNonWorkingDaySource{T}"/> based on the file at the provided file path).</param>
-        /// <returns>The same instance of a <see cref="WorkingDayServiceBuilder"/> only using the new <see cref="FileNonWorkingDaySource{T}"/> configured with the file at the provided file path.</returns>
-        public static WorkingDayServiceBuilder UseFileSource<T>(this WorkingDayServiceBuilder builder, string filePath, Func<string, T> parseFileContentAction, Func<DateTime, T, bool> checkAction)
-            => builder.UseSource(new FileNonWorkingDaySource<T>(filePath, parseFileContentAction, checkAction));
-
-        /// <summary>
         /// Configures a <see cref="WorkingDayServiceBuilder"/> to use a <see cref="FileNonWorkingDaySource{T}"/> in addition to its current sources.
         /// </summary>
         /// <typeparam name="T">The type of the internal state for the <see cref="FileNonWorkingDaySource{T}"/>.</typeparam>
@@ -33,6 +21,6 @@ namespace CR.WorkingDayService.FileSource
         /// <param name="checkAction">The action used to determine if a <see cref="DateTime"/> is on a Working Day (using the <see cref="FileNonWorkingDaySource{T}"/>).</param>
         /// <returns>The same instance of a <see cref="WorkingDayServiceBuilder"/> using the new <see cref="FileNonWorkingDaySource{T}"/> configured with the file at the provided file path, in addition to its current sources.</returns>
         public static WorkingDayServiceBuilder AddFileSource<T>(this WorkingDayServiceBuilder builder, string filePath, Func<string, T> parseFileContentAction, Func<DateTime, T, bool> checkAction)
-            => builder.AddSource(new FileNonWorkingDaySource<T>(filePath, parseFileContentAction, checkAction));
+            => builder.WithSource(new FileNonWorkingDaySource<T>(filePath, parseFileContentAction, checkAction));
     }
 }
