@@ -52,7 +52,7 @@ namespace CR.WorkingDayService.Tests
         [Test]
         public static void Subtract2WorkingDaysReturnsCorrectDay()
         {
-            Assert.AreEqual(WorkingDayService.SubtractWorkingDays(2, new DateTime(2018, 5, 15, 9, 30, 0)), new DateTime(2018, 5, 12, 9, 30, 0));
+            Assert.AreEqual(WorkingDayService.SubtractWorkingDays(2, new DateTime(2018, 5, 16, 9, 30, 0)), new DateTime(2018, 5, 12, 9, 30, 0));
             Assert.AreEqual(WorkingDayService.SubtractWorkingDays(2, new DateTime(2018, 5, 18, 10, 30, 55)), new DateTime(2018, 5, 16, 10, 30, 55));
         }
     }

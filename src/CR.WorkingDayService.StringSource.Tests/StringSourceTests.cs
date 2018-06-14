@@ -31,6 +31,6 @@ namespace CR.WorkingDayService.StringSource.Tests
 
         private static IReadOnlyList<DateTime> ParseMethod(string value) => value.Split(',').Select(DateTime.Parse).ToList();
 
-        private static bool CheckMethod(DateTime date, IReadOnlyList<DateTime> state) => !state.Contains(date);
+        private static bool CheckMethod(DateTime date, IReadOnlyList<DateTime> state) => state.Contains(date);
     }
 }

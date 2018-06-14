@@ -24,34 +24,34 @@ namespace CR.WorkingDayService.Tests
         /// Test to check that a Working Day Service with one Source considers a Working Day a Working Day.
         /// </summary>
         [Test]
-        public static void WorkingDayServiceWithOneSourceReturnsTrueWhenIsWorkingDayIsCalledOnAWorkingDay() => Assert.IsTrue(new WorkingDayService(new List<NonWorkingDaySource> { new MondayNonWorkingDayTestSource() }).IsWorkingDay(new DateTime(2018, 5, 14)));
+        public static void WorkingDayServiceWithOneSourceReturnsTrueWhenIsWorkingDayIsCalledOnAWorkingDay() => Assert.IsTrue(new WorkingDayService(new List<NonWorkingDaySource> { new MondayNonWorkingDayTestSource() }).IsWorkingDay(new DateTime(2018, 5, 15)));
 
         /// <summary>
         /// Test to check that a Working Day Service with one Source considers a non-Working Day a non-Working Day.
         /// </summary>
         [Test]
-        public static void WorkingDayServiceWithOneSourceReturnsFalseWhenIsWorkingDayIsCalledOnANonWorkingDay() => Assert.IsFalse(new WorkingDayService(new List<NonWorkingDaySource> { new MondayNonWorkingDayTestSource() }).IsWorkingDay(new DateTime(2018, 5, 15)));
+        public static void WorkingDayServiceWithOneSourceReturnsFalseWhenIsWorkingDayIsCalledOnANonWorkingDay() => Assert.IsTrue(new WorkingDayService(new List<NonWorkingDaySource> { new MondayNonWorkingDayTestSource() }).IsNonWorkingDay(new DateTime(2018, 5, 14)));
 
         /// <summary>
         /// Test to check that a Working Day Service with multiple Sources considers a date which is a Non-Working Day according to any of its sources a Non-Working Day.
         /// </summary>
         [Test]
-        public static void WorkingDayServiceWithMultipleSourcesReturnsTrueForAnyDayConsideredAWorkingDayByAtLeastOneSourcePassedToIsWorkingDay()
+        public static void WorkingDayServiceWithMultipleSourcesReturnsTrueForAnyDayConsideredAWorkingDayByAtLeastOneSourcePassedToIsNonWorkingDay()
         {
             var workingDayService = new WorkingDayService(new List<NonWorkingDaySource> { new MondayNonWorkingDayTestSource(), new TuesdayNonWorkingDayTestSource() });
-            Assert.IsFalse(workingDayService.IsWorkingDay(new DateTime(2018, 5, 14)));
-            Assert.IsFalse(workingDayService.IsWorkingDay(new DateTime(2018, 5, 15)));
+            Assert.IsTrue(workingDayService.IsNonWorkingDay(new DateTime(2018, 5, 14)));
+            Assert.IsTrue(workingDayService.IsNonWorkingDay(new DateTime(2018, 5, 15)));
         }
 
         /// <summary>
-        /// Test to check that a Working Day Service with multiple Source considers a date which is a Working Day according to any of its sources a Working Day.
+        /// Test to check that a Working Day Service with multiple Sources considers a date which is a Working Day according to all of its sources a Working Day.
         /// </summary>
         [Test]
         public static void WorkingDayServiceWithMultipleSourcesReturnsFalseForAnyDayConsideredAWorkingDayByAtLeastOneSourcePassedToIsWorkingDay()
         {
             var workingDayService = new WorkingDayService(new List<NonWorkingDaySource> { new MondayNonWorkingDayTestSource(), new TuesdayNonWorkingDayTestSource() });
-            Assert.IsFalse(workingDayService.IsWorkingDay(new DateTime(2018, 5, 16)));
-            Assert.IsFalse(workingDayService.IsWorkingDay(new DateTime(2018, 5, 17)));
+            Assert.IsTrue(workingDayService.IsWorkingDay(new DateTime(2018, 5, 16)));
+            Assert.IsTrue(workingDayService.IsWorkingDay(new DateTime(2018, 5, 17)));
         }
     }
 }
