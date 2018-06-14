@@ -25,7 +25,8 @@ namespace CR.WorkingDayService.StringSource
         /// Initializes a new instance of the <see cref="StringNonWorkingDaySource{T}"/> class.
         /// </summary>
         /// <param name="parseAction">The action used to build the internal state of the <see cref="StringNonWorkingDaySource{T}"/> from the provided <see cref="string"/>.</param>
-        /// <param name="checkAction">The action to get whether a <see cref="DateTime"/> is on a Working Day based on the current state.</param>
+        /// <param name="checkAction">The action to get whether a <see cref="DateTime"/> is on a Non-Working Day based on the current state.
+        /// Should return <c>true</c> if the provided date is a Non-Working Day and <c>false</c> if it is a Working Day.</param>
         protected StringNonWorkingDaySource(Func<string, T> parseAction, Func<DateTime, T, bool> checkAction)
         {
             CheckAction = checkAction ?? throw new ArgumentNullException(nameof(parseAction));
