@@ -48,11 +48,20 @@ namespace CR.WorkingDayService.StringSource
         protected T State { get; set; }
 
         /// <inheritdoc />
-        public override bool IsNonWorkingDay(DateTime date)
+        public override bool IsWorkingDay(DateTime date)
         {
             lock (State)
             {
                 return !CheckAction(date, State);
+            }
+        }
+
+        /// <inheritdoc />
+        public override bool IsNonWorkingDay(DateTime date)
+        {
+            lock (State)
+            {
+                return CheckAction(date, State);
             }
         }
     }
