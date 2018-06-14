@@ -34,7 +34,7 @@ namespace CR.WorkingDayService
         /// Uses the <see cref="WorkingDayService"/>'s registered <see cref="NonWorkingDaySource"/>s to determine if a particular <see cref="DateTime"/> is on a working day.
         /// If a day according to all registered source is a working day, that day will be considered a working day.
         /// </summary>
-        public override bool IsWorkingDay(DateTime date) => _sources == null || _sources.Count == 0 || _sources.All(source => source.IsNonWorkingDay(date));
+        public override bool IsWorkingDay(DateTime date) => _sources == null || _sources.Count == 0 || _sources.All(source => source.IsWorkingDay(date));
 
         /// <summary>
         /// Gets the next working day after the provided <see cref="DateTime"/>.
@@ -74,6 +74,16 @@ namespace CR.WorkingDayService
         /// <returns>The <see cref="DateTime"/> of the day on the provided number of working days after the provided date.</returns>
         public DateTime AddWorkingDays(uint numberToAdd, DateTime date)
         {
+            if (numberToAdd == 0)
+            {
+                return date;
+            }
+
+            if (!IsWorkingDay(date))
+            {
+                numberToAdd++;
+            }
+
             for (var i = 0; i < numberToAdd; i++)
             {
                 date = NextWorkingDay(date);
@@ -90,6 +100,16 @@ namespace CR.WorkingDayService
         /// <returns>The <see cref="DateTime"/> of the day on the provided number of working days before the provided date.</returns>
         public DateTime SubtractWorkingDays(uint numberToSubtract, DateTime date)
         {
+            if (numberToSubtract == 0)
+            {
+                return date;
+            }
+
+            if (!IsWorkingDay(date))
+            {
+                numberToSubtract++;
+            }
+
             for (var i = 0; i < numberToSubtract; i++)
             {
                 date = PreviousWorkingDay(date);
