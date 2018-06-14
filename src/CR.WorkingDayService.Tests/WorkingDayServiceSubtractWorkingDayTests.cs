@@ -22,8 +22,8 @@ namespace CR.WorkingDayService.Tests
         [Test]
         public static void PreviousWorkingDayReturnsCorrectDay()
         {
-            Assert.AreEqual(WorkingDayService.PreviousWorkingDay(new DateTime(2018, 5, 14, 9, 30, 0)), new DateTime(2018, 5, 8, 9, 30, 0));
-            Assert.AreEqual(WorkingDayService.PreviousWorkingDay(new DateTime(2018, 5, 15, 10, 30, 55)), new DateTime(2018, 5, 14, 10, 30, 55));
+            Assert.AreEqual(WorkingDayService.PreviousWorkingDay(new DateTime(2018, 5, 17, 9, 30, 0)), new DateTime(2018, 5, 16, 9, 30, 0));
+            Assert.AreEqual(WorkingDayService.PreviousWorkingDay(new DateTime(2018, 5, 16, 10, 30, 55)), new DateTime(2018, 5, 13, 10, 30, 55));
         }
 
         /// <summary>
@@ -42,8 +42,8 @@ namespace CR.WorkingDayService.Tests
         [Test]
         public static void Subtract1WorkingDaysReturnsCorrectDay()
         {
-            Assert.AreEqual(WorkingDayService.SubtractWorkingDays(1, new DateTime(2018, 5, 14, 9, 30, 0)), new DateTime(2018, 5, 8, 9, 30, 0));
-            Assert.AreEqual(WorkingDayService.SubtractWorkingDays(1, new DateTime(2018, 5, 15, 10, 30, 55)), new DateTime(2018, 5, 14, 10, 30, 55));
+            Assert.AreEqual(WorkingDayService.SubtractWorkingDays(1, new DateTime(2018, 5, 16, 9, 30, 0)), new DateTime(2018, 5, 13, 9, 30, 0));
+            Assert.AreEqual(WorkingDayService.SubtractWorkingDays(1, new DateTime(2018, 5, 17, 10, 30, 55)), new DateTime(2018, 5, 16, 10, 30, 55));
         }
 
         /// <summary>
@@ -52,8 +52,8 @@ namespace CR.WorkingDayService.Tests
         [Test]
         public static void Subtract2WorkingDaysReturnsCorrectDay()
         {
-            Assert.AreEqual(WorkingDayService.SubtractWorkingDays(2, new DateTime(2018, 5, 14, 9, 30, 0)), new DateTime(2018, 5, 7, 9, 30, 0));
-            Assert.AreEqual(WorkingDayService.SubtractWorkingDays(2, new DateTime(2018, 5, 15, 10, 30, 55)), new DateTime(2018, 5, 8, 10, 30, 55));
+            Assert.AreEqual(WorkingDayService.SubtractWorkingDays(2, new DateTime(2018, 5, 15, 9, 30, 0)), new DateTime(2018, 5, 12, 9, 30, 0));
+            Assert.AreEqual(WorkingDayService.SubtractWorkingDays(2, new DateTime(2018, 5, 18, 10, 30, 55)), new DateTime(2018, 5, 16, 10, 30, 55));
         }
     }
 }
