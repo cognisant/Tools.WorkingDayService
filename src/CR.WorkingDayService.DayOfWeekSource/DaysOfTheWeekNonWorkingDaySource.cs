@@ -11,7 +11,7 @@ namespace CR.WorkingDayService.DayOfWeekSource
     /// <summary>
     /// An implementation of <see cref="NonWorkingDaySource"/> which uses the <see cref="DayOfWeek"/> of the provided <see cref="DateTime"/> to determine whether the day is a Working Day or Non-Working Day.
     /// </summary>
-    public sealed class DaysOfTheWeekNonWorkingDaySource : NonWorkingDaySource
+    public class DaysOfTheWeekNonWorkingDaySource : NonWorkingDaySource
     {
         private readonly HashSet<DayOfWeek> _nonWorkingDays;
 

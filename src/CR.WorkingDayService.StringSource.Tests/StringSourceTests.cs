@@ -13,7 +13,7 @@ namespace CR.WorkingDayService.StringSource.Tests
     /// Tests for the String Working Day Source.
     /// </summary>
     [TestFixture]
-    public sealed class StringSourceTests
+    public class StringSourceTests
     {
         private static readonly WorkingDayService WorkingDayService = new WorkingDayService(new List<NonWorkingDaySource> { new StringNonWorkingDaySource<IReadOnlyList<DateTime>>("2018/05/14,2018/05/15", ParseMethod, CheckMethod) });
 

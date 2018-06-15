@@ -13,7 +13,7 @@ namespace CR.WorkingDayService.FileSource
     /// <summary>
     /// An implementation of <see cref="StringNonWorkingDaySource{T}"/> which uses the content of a File to determine whether a given <see cref="DateTime"/> is on a Working Day or a Non-Working Day.
     /// </summary>
-    public sealed class FileNonWorkingDaySource<T> : StringNonWorkingDaySource<T>, IDisposable
+    public class FileNonWorkingDaySource<T> : StringNonWorkingDaySource<T>, IDisposable
     {
         private readonly FileSystemWatcher _fileWatcher;
 

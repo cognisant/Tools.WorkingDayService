@@ -14,7 +14,7 @@ namespace CR.WorkingDayService.HttpSource
     /// <summary>
     /// An implementation of <see cref="StringNonWorkingDaySource{T}"/> which uses the returned content of a HTTP Endpoint as the source for determining if a <see cref="DateTime"/> is on a non-Working Day.
     /// </summary>
-    public sealed class HttpNonWorkingDaySource<T> : StringNonWorkingDaySource<T>, IDisposable
+    public class HttpNonWorkingDaySource<T> : StringNonWorkingDaySource<T>, IDisposable
     {
         private readonly HttpRequestMessage _request;
         private readonly HttpClient _httpClient;

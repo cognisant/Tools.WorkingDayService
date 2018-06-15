@@ -11,7 +11,7 @@ namespace CR.WorkingDayService
     /// <summary>
     /// A Builder Class for the Working Day Service; used for easy configuration.
     /// </summary>
-    public sealed class WorkingDayServiceBuilder
+    public class WorkingDayServiceBuilder
     {
         private readonly HashSet<NonWorkingDaySource> _sources;
 

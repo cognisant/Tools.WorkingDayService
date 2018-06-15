@@ -11,7 +11,7 @@ namespace CR.WorkingDayService
     /// <summary>
     /// A service which can determine whether a given <see cref="DateTime"/> is on a working day or a non-working day.
     /// </summary>
-    public sealed class WorkingDayService : NonWorkingDaySource
+    public class WorkingDayService : NonWorkingDaySource
     {
         private readonly IReadOnlyCollection<NonWorkingDaySource> _sources;
 

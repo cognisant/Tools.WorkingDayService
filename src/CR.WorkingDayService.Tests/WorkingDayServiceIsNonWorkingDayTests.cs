@@ -12,7 +12,7 @@ namespace CR.WorkingDayService.Tests
     /// Tests for the Working Day Service's IsNonWorkingDay method.
     /// </summary>
     [TestFixture]
-    public sealed class WorkingDayServiceIsNonWorkingDayTests
+    public class WorkingDayServiceIsNonWorkingDayTests
     {
         /// <summary>
         /// Test to check that a Working Day Service which has no sources considers no Days a non-Working Day.

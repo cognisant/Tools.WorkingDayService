@@ -12,7 +12,7 @@ namespace CR.WorkingDayService.Tests
     /// Tests for subtracting working days to a Working Day via the Working Day Service.
     /// </summary>
     [TestFixture]
-    public sealed class WorkingDayServiceSubtractWorkingDayTests
+    public class WorkingDayServiceSubtractWorkingDayTests
     {
         private static readonly WorkingDayService WorkingDayService = new WorkingDayService(new List<NonWorkingDaySource> { new MondayNonWorkingDayTestSource(), new TuesdayNonWorkingDayTestSource() });
 

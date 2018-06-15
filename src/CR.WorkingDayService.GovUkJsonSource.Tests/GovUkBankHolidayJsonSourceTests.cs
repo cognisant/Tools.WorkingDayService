@@ -11,7 +11,7 @@ namespace CR.WorkingDayService.GovUkJsonSource.Tests
     /// Tests for the Parse method for the GovUkBankHolidayJson implementation of the HttpSource.
     /// </summary>
     [TestFixture]
-    public sealed class GovUkBankHolidayJsonSourceTests
+    public class GovUkBankHolidayJsonSourceTests
     {
         /// <summary>
         /// A test to ensure the GovUkBankHolidayJsonParse method parses correctly.

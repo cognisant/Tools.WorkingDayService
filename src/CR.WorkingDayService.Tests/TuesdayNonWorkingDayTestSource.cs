@@ -7,7 +7,7 @@ namespace CR.WorkingDayService.Tests
     using System;
 
     /// <inheritdoc />
-    internal sealed class TuesdayNonWorkingDayTestSource : NonWorkingDaySource
+    internal class TuesdayNonWorkingDayTestSource : NonWorkingDaySource
     {
         /// <inheritdoc />
         public override bool IsNonWorkingDay(DateTime date) => date.DayOfWeek == DayOfWeek.Tuesday;
