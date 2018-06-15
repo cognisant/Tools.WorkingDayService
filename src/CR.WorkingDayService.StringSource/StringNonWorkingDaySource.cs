@@ -17,7 +17,8 @@ namespace CR.WorkingDayService.StringSource
         /// </summary>
         /// <param name="content">The <see cref="string"/> who's content the new <see cref="StringNonWorkingDaySource{T}"/> should be based on.</param>
         /// <param name="parseAction">The action used to build the internal state of the <see cref="StringNonWorkingDaySource{T}"/> from the provided <see cref="string"/>.</param>
-        /// <param name="checkAction">The action used to determine if a <see cref="DateTime"/> is on a Working Day (using the <see cref="StringNonWorkingDaySource{T}"/> based on the provided <see cref="string"/>).</param>
+        /// <param name="checkAction">The action used to determine if a <see cref="DateTime"/> is on a Non-Working Day (using the <see cref="StringNonWorkingDaySource{T}"/> based on the provided <see cref="string"/>).
+        /// Should return <c>true</c> if the provided <see cref="DateTime"/> is on a Non-Working Day, and <c>false</c> if it is on a Working Day.</param>
         public StringNonWorkingDaySource(string content, Func<string, T> parseAction, Func<DateTime, T, bool> checkAction)
             : this(parseAction, checkAction) => State = parseAction(content);
 
@@ -34,7 +35,7 @@ namespace CR.WorkingDayService.StringSource
         }
 
         /// <summary>
-        /// Gets the action used to check whether a <see cref="DateTime"/> is on a Working Day (using the <see cref="StringNonWorkingDaySource{T}"/>).
+        /// Gets the action used to check whether a <see cref="DateTime"/> is on a Non-Working Day (using the <see cref="StringNonWorkingDaySource{T}"/>).
         /// </summary>
         protected Func<DateTime, T, bool> CheckAction { get; }
 

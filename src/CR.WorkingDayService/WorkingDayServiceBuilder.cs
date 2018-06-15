@@ -4,6 +4,7 @@
 
 namespace CR.WorkingDayService
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
 
@@ -20,16 +21,27 @@ namespace CR.WorkingDayService
         public WorkingDayServiceBuilder() => _sources = new HashSet<NonWorkingDaySource>();
 
         /// <summary>
+        /// Converts a a <see cref="WorkingDayServiceBuilder"/> into a new instance of the <see cref="WorkingDayService"/> class.
+        /// </summary>
+        /// <param name="builder">The <see cref="WorkingDayServiceBuilder"/> to use to build the new <see cref="WorkingDayService"/> with.
+        /// The new <see cref="WorkingDayService"/>'s sources will match the provided <see cref="WorkingDayServiceBuilder"/>'s sources.</param>
+        public static implicit operator WorkingDayService(WorkingDayServiceBuilder builder)
+        {
+            var sources = builder._sources;
+
+            if (sources == null || sources.Count > 0)
+            {
+                throw new ArgumentException();
+            }
+
+            return new WorkingDayService(sources.ToList());
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="WorkingDayServiceBuilder"/> class.
         /// </summary>
         /// <returns>The new instance of the <see cref="WorkingDayServiceBuilder"/> class.</returns>
         public static WorkingDayServiceBuilder New() => new WorkingDayServiceBuilder();
-
-        /// <summary>
-        /// Builds a <see cref="WorkingDayService"/> with the configured set of <see cref="NonWorkingDaySource"/>s.
-        /// </summary>
-        /// <returns>A <see cref="WorkingDayService"/> which uses the <see cref="NonWorkingDaySource"/>s in the <see cref="WorkingDayServiceBuilder"/>'s <c>_sources</c>.</returns>
-        public WorkingDayService Build() => new WorkingDayService(_sources.ToList());
 
         /// <summary>
         /// Configures the <see cref="WorkingDayServiceBuilder"/> to use the specified <see cref="NonWorkingDaySource"/> in addition to its current sources.

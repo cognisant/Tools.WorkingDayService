@@ -42,7 +42,7 @@ namespace CR.WorkingDayService.GovUkJsonSource
         private static NonWorkingDaySource GovUkBankHolidayJsonSource(TimeSpan refreshTime) => new HttpNonWorkingDaySource<List<DateTime>>(
             new HttpRequestMessage(HttpMethod.Get, "https://www.gov.uk/bank-holidays.json"),
             GovUkBankHolidayJsonParse,
-            (dateTime, list) => !list.Contains(dateTime.Date),
+            (dateTime, list) => list.Contains(dateTime.Date),
             refreshTime);
     }
 }

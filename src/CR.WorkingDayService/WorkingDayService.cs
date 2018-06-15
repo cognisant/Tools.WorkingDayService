@@ -9,7 +9,7 @@ namespace CR.WorkingDayService
     using System.Linq;
 
     /// <summary>
-    /// A service which can determine whether a given <see cref="DateTime"/> is on a working day.
+    /// A service which can determine whether a given <see cref="DateTime"/> is on a working day or a non-working day.
     /// </summary>
     public sealed class WorkingDayService : NonWorkingDaySource
     {
@@ -18,8 +18,7 @@ namespace CR.WorkingDayService
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkingDayService"/> class.
         /// </summary>
-        /// <param name="sources">The <see cref="NonWorkingDaySource"/>s to use to determine whether a given <see cref="DateTime"/> is on a working day, or a non-working day.
-        /// If no sources are specified, all days are considered working days.</param>
+        /// <param name="sources">The <see cref="NonWorkingDaySource"/>s to use to determine whether a given <see cref="DateTime"/> is on a working day, or a non-working day.</param>
         public WorkingDayService(IReadOnlyCollection<NonWorkingDaySource> sources) => _sources = sources;
 
         /// <inheritdoc />
@@ -27,14 +26,14 @@ namespace CR.WorkingDayService
         /// Uses the <see cref="WorkingDayService"/>'s registered <see cref="NonWorkingDaySource"/>s to determine if a particular <see cref="DateTime"/> is on a non-working day.
         /// If a day according to any registered source is a non-working day, that day will be considered a non-working day.
         /// </summary>
-        public override bool IsNonWorkingDay(DateTime date) => _sources != null && _sources.Count != 0 && _sources.Any(source => source.IsNonWorkingDay(date));
+        public override bool IsNonWorkingDay(DateTime date) => _sources.Any(source => source.IsNonWorkingDay(date));
 
         /// <inheritdoc />
         /// <summary>
         /// Uses the <see cref="WorkingDayService"/>'s registered <see cref="NonWorkingDaySource"/>s to determine if a particular <see cref="DateTime"/> is on a working day.
         /// If a day according to all registered source is a working day, that day will be considered a working day.
         /// </summary>
-        public override bool IsWorkingDay(DateTime date) => _sources == null || _sources.Count == 0 || _sources.All(source => source.IsWorkingDay(date));
+        public override bool IsWorkingDay(DateTime date) => _sources.All(source => source.IsWorkingDay(date));
 
         /// <summary>
         /// Gets the next working day after the provided <see cref="DateTime"/>.

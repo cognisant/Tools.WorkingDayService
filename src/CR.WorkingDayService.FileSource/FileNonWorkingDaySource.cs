@@ -23,7 +23,8 @@ namespace CR.WorkingDayService.FileSource
         /// </summary>
         /// <param name="filePath">The path to the file who's content should be used to create and update the <see cref="FileNonWorkingDaySource{T}"/>.</param>
         /// <param name="parseFileContentAction">The action used to build the internal state of the <see cref="FileNonWorkingDaySource{T}"/> from the content of the file at the provided file path.</param>
-        /// <param name="checkAction">The action used to determine if a <see cref="DateTime"/> is on a Working Day (using the <see cref="FileNonWorkingDaySource{T}"/> based on the file at the provided file path).</param>
+        /// <param name="checkAction">The action used to determine if a <see cref="DateTime"/> is on a Non-Working Day (using the <see cref="FileNonWorkingDaySource{T}"/> based on the file at the provided file path).
+        /// Should return <c>true</c> if the provided <see cref="DateTime"/> is on a Non-Working Day, and <c>false</c> if it is on a Working Day.</param>
         public FileNonWorkingDaySource(string filePath, Func<string, T> parseFileContentAction, Func<DateTime, T, bool> checkAction)
             : base(parseFileContentAction, checkAction)
         {
