@@ -16,7 +16,7 @@ namespace CR.WorkingDayService.DayOfWeekSource
         private readonly HashSet<DayOfWeek> _nonWorkingDays;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DaysOfTheWeekNonWorkingDaySource"/> class, which considers each <see cref="DayOfWeek"/> contained in the provided <see cref="IEnumerable{T}"/> as a Non-Working Day.
+        /// Initializes a new instance of the <see cref="DaysOfTheWeekNonWorkingDaySource"/> class, which considers each <see cref="DayOfWeek"/> contained in the provided <see cref="IEnumerable{T}"/> to be a Non-Working Day.
         /// </summary>
         /// <param name="nonWorkingDays">The days to consider Non-Working Days.</param>
         public DaysOfTheWeekNonWorkingDaySource(IEnumerable<DayOfWeek> nonWorkingDays) => _nonWorkingDays = new HashSet<DayOfWeek>(nonWorkingDays);
