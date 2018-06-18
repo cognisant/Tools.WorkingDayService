@@ -2,10 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard1.0</TargetFramework>
-    <Authors>Cognisant</Authors>
+    <Authors>Cognisant Research</Authors>
     <Product>CR.WorkingDayService</Product>
-    <Description>The String Working Day Source package for a Working Day Service - a tool which provides information about working &amp; non-working days based on a range of rules and sources.</Description>
-    <Copyright>Cognisant 2018</Copyright>
+    <Description>The String Non-Working-Day Source package for a Working Day Service - a tool which provides information about working &amp; non-working days based on a range of rules and sources.
+
+This package includes an implementation of the NonWorkingDaySource which is constructed using a method to get a state from a string, and a method to get whether a given day is a non-working day from the devived state.</Description>
+    <Copyright>Cognisant Research 2018</Copyright>
     <PackageLicenseUrl>https://github.com/cognisant/cr-workingdayservice/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/cognisant/cr-workingdayservice</PackageProjectUrl>
     <PackageIconUrl>https://github.com/cognisant/cr-workingdayservice/blob/master/logo.png</PackageIconUrl>

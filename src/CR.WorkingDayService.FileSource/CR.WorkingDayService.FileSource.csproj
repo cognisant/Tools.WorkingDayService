@@ -2,15 +2,18 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard1.3</TargetFramework>
-    <Authors>Cognisant</Authors>
+    <Authors>Cognisant Research</Authors>
     <Product>CR.WorkingDayService</Product>
-    <Description>The File Working Day Source package for a Working Day Service - a tool which provides information about working &amp; non-working days based on a range of rules and sources.</Description>
-    <Copyright>Cognisant 2018</Copyright>
+    <Description>The File Non-Working-Day Source package for a Working Day Service - a tool which provides information about working &amp; non-working days based on a range of rules and sources.
+
+This package contains an implementation of a NonWorkingDaySource which reads a state from a file using the file path provided, and method to convert the resulting string into a state which can be used with a second method to determine whether a given DateTime is on a non-working day.</Description>
+    <Copyright>Cognisant Research 2018</Copyright>
     <PackageLicenseUrl>https://github.com/cognisant/cr-workingdayservice/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/cognisant/cr-workingdayservice</PackageProjectUrl>
     <PackageIconUrl>https://github.com/cognisant/cr-workingdayservice/blob/master/logo.png</PackageIconUrl>
     <RepositoryUrl>https://github.com/cognisant/cr-workingdayservice</RepositoryUrl>
     <PackageTags>Cognisant, Working Day</PackageTags>
+    <Company>Cognisant Research</Company>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

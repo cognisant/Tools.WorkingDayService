@@ -2,10 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard1.0</TargetFramework>
-    <Authors>Cognisant</Authors>
+    <Authors>Cognisant Research</Authors>
     <Product>CR.WorkingDayService</Product>
-    <Description>The Day-Of-The-Week Working Day Source package for a Working Day Service - a tool which provides information about working &amp; non-working days based on a range of rules and sources.</Description>
-    <Copyright>Cognisant 2018</Copyright>
+    <Description>The Day-Of-The-Week Non-Working-Day Source package for a Working Day Service - a tool which provides information about working &amp; non-working days based on a range of rules and sources.
+
+This package contains an implementation of the NonWorkingDaySource which decides whether a given DateTime is a non-working day based on the day of the week it falls upon.</Description>
+    <Copyright>Cognisant Research 2018</Copyright>
     <PackageLicenseUrl>https://github.com/cognisant/cr-workingdayservice/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/cognisant/cr-workingdayservice</PackageProjectUrl>
     <PackageIconUrl>https://github.com/cognisant/cr-workingdayservice/blob/master/logo.png</PackageIconUrl>

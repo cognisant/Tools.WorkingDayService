@@ -2,15 +2,18 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard1.3</TargetFramework>
-    <Authors>Cognisant</Authors>
+    <Authors>Cognisant Research</Authors>
     <Product>CR.WorkingDayService</Product>
-    <Description>The GovUKJson Working Day Source package for a Working Day Service - a tool which provides information about working &amp; non-working days based on a range of rules and sources.</Description>
-    <Copyright>Cognisant 2018</Copyright>
+    <Description>The GovUKJson Non-Working-Day Source package for a Working Day Service - a tool which provides information about working &amp; non-working days based on a range of rules and sources.
+
+This package contains an extension method for the WorkingDayServiceBuilder to add a HttpNonWorkingDaySource which queries the UK Government's Bank Holiday JSON Api to determine whether a DateTime is on a bank holiday (non-working day).</Description>
+    <Copyright>Cognisant Research 2018</Copyright>
     <PackageLicenseUrl>https://github.com/cognisant/cr-workingdayservice/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/cognisant/cr-workingdayservice</PackageProjectUrl>
     <PackageIconUrl>https://github.com/cognisant/cr-workingdayservice/blob/master/logo.png</PackageIconUrl>
     <RepositoryUrl>https://github.com/cognisant/cr-workingdayservice</RepositoryUrl>
     <PackageTags>Cognisant, Working Day</PackageTags>
+    <Company>Cognisant Research</Company>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

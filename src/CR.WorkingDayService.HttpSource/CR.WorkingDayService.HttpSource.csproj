@@ -2,10 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard1.2</TargetFramework>
-    <Authors>Cognisant</Authors>
+    <Authors>Cognisant Research</Authors>
     <Product>CR.WorkingDayService</Product>
-    <Description>The HTTP Working Day Source package for a Working Day Service - a tool which provides information about working &amp; non-working days based on a range of rules and sources.</Description>
-    <Copyright>Cognisant 2018</Copyright>
+    <Description>The HTTP Non-Working-Day Source package for a Working Day Service - a tool which provides information about working &amp; non-working days based on a range of rules and sources.
+
+This package includes an implementation of a NonWorkingDaySource which is constructed using a URL to query on a specified timer, a method to convert the response into a state, and a method to get whether a given DateTime is on a non-working day based on the current state.</Description>
+    <Copyright>Cognisant Research 2018</Copyright>
     <PackageLicenseUrl>https://github.com/cognisant/cr-workingdayservice/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/cognisant/cr-workingdayservice</PackageProjectUrl>
     <PackageIconUrl>https://github.com/cognisant/cr-workingdayservice/blob/master/logo.png</PackageIconUrl>
