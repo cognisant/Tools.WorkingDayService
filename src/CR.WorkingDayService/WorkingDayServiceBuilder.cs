@@ -16,12 +16,12 @@ namespace CR.WorkingDayService
         private readonly HashSet<NonWorkingDaySource> _sources;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="WorkingDayServiceBuilder"/> class with no <see cref="NonWorkingDaySource"/>s.
+        /// Initializes a new instance of the <see cref="WorkingDayServiceBuilder"/> class with no configured <see cref="NonWorkingDaySource"/>s.
         /// </summary>
         public WorkingDayServiceBuilder() => _sources = new HashSet<NonWorkingDaySource>();
 
         /// <summary>
-        /// Converts a a <see cref="WorkingDayServiceBuilder"/> into a new instance of the <see cref="WorkingDayService"/> class.
+        /// Converts a <see cref="WorkingDayServiceBuilder"/> into a new instance of the <see cref="WorkingDayService"/> class.
         /// </summary>
         /// <param name="builder">The <see cref="WorkingDayServiceBuilder"/> to use to build the new <see cref="WorkingDayService"/> with.
         /// The new <see cref="WorkingDayService"/>'s sources will match the provided <see cref="WorkingDayServiceBuilder"/>'s sources.</param>

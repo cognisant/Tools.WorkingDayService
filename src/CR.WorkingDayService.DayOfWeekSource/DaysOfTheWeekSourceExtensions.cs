@@ -14,7 +14,7 @@ namespace CR.WorkingDayService.DayOfWeekSource
     public static class DaysOfTheWeekSourceExtensions
     {
         /// <summary>
-        /// Configures the <see cref="WorkingDayServiceBuilder"/> to use a <see cref="DaysOfTheWeekNonWorkingDaySource"/> which considers the provided days to be Non-Working days, in addition to its current sources.
+        /// Configures the <see cref="WorkingDayServiceBuilder"/> to use a <see cref="DaysOfTheWeekNonWorkingDaySource"/> which considers the provided days to be Non-Working days, as well as any previously configured sources.
         /// </summary>
         /// <param name="builder">The Builder to configure.</param>
         /// <param name="workingDays">The days to consider Non-Working Days.</param>
