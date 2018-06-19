@@ -17,7 +17,7 @@ namespace CR.WorkingDayService.StringSource
         /// </summary>
         /// <typeparam name="T">The type of the internal state of the <see cref="StringNonWorkingDaySource{T}"/>.</typeparam>
         /// <param name="builder">The Builder to configure.</param>
-        /// <param name="source">The strinc content to be used to build the internal state of the <see cref="StringNonWorkingDaySource{T}"/>.</param>
+        /// <param name="source">The string content to be used to build the internal state of the <see cref="StringNonWorkingDaySource{T}"/>.</param>
         /// <param name="parseFileContentAction">The action used to build the internal state of the <see cref="StringNonWorkingDaySource{T}"/> from the provided string content.</param>
         /// <param name="checkAction">The action used to determine whether a given <see cref="DateTime"/> is on a non-Working Day (using the <see cref="StringNonWorkingDaySource{T}"/>, based on the provided string content).
         /// Should return <c>true</c> if the provided <see cref="DateTime"/> is on a Non-Working Day, and <c>false</c> if it is on a Working Day.</param>
