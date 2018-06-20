@@ -1,17 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.0</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <Authors>Cognisant Research</Authors>
     <Company>Cognisant Research</Company>
     <Description>A tool which provides information about working &amp; non-working days based on a range of rules and sources.</Description>
     <Copyright>Cognisant Research 2018</Copyright>
-    <PackageLicenseUrl>https://github.com/cognisant/cr-workingdayservice/blob/master/LICENSE</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/cognisant/cr-workingdayservice</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/cognisant/cr-workingdayservice</RepositoryUrl>
-    <PackageIconUrl>https://github.com/cognisant/cr-workingdayservice/blob/master/logo.png</PackageIconUrl>
+    <PackageLicenseUrl>https://github.com/cognisant/CR.Tools.WorkingDayService/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/cognisant/CR.Tools.WorkingDayService</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/cognisant/CR.Tools.WorkingDayService</RepositoryUrl>
+    <PackageIconUrl>https://github.com/cognisant/CR.Tools.WorkingDayService/blob/master/logo.png</PackageIconUrl>
     <PackageTags>Cognisant, Working Day</PackageTags>
     <PackageId>CR.WorkingDayService</PackageId>
+    <PackageReleaseNotes>https://GitHub.com/Cognisant/WorkingDayService/releases/tag/$(Tag)</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -28,6 +29,7 @@
 
   <ItemGroup>
     <PackageReference Include="CR.CodeStyle.CSharp.Full" Version="1.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
   </ItemGroup>
 
 </Project>

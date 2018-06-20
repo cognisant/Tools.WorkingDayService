@@ -2,13 +2,12 @@
 // Copyright (c) Cognisant. All rights reserved.
 // </copyright>
 
-namespace CR.WorkingDayService.GovUkJsonSource
+namespace CR.WorkingDayService.HttpSource.GovUkJsonSource
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Net.Http;
-    using HttpSource;
     using Newtonsoft.Json.Linq;
 
     /// <summary>
