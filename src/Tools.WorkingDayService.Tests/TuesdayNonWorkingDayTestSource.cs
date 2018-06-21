@@ -2,7 +2,7 @@
 // Copyright (c) Cognisant. All rights reserved.
 // </copyright>
 
-namespace CR.WorkingDayService.Tests
+namespace CR.Tools.WorkingDayService.Tests
 {
     using System;
 

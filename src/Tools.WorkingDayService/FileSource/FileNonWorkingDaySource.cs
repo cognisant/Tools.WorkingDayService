@@ -2,11 +2,11 @@
 // Copyright (c) Cognisant. All rights reserved.
 // </copyright>
 
-namespace CR.WorkingDayService.FileSource
+namespace CR.Tools.WorkingDayService.FileSource
 {
     using System;
     using System.IO;
-    using StringSource;
+    using CR.Tools.WorkingDayService.StringSource;
 
     /// <inheritdoc cref="StringNonWorkingDaySource{T}"/>
     /// <inheritdoc cref="IDisposable"/>

@@ -2,10 +2,10 @@
 // Copyright (c) Cognisant. All rights reserved.
 // </copyright>
 
-namespace CR.WorkingDayService.Tests
+namespace CR.Tools.WorkingDayService.Tests
 {
     using System;
-    using CR.WorkingDayService.HttpSource.GovUkJsonSource;
+    using CR.Tools.WorkingDayService.HttpSource.GovUkJsonSource;
     using NUnit.Framework;
 
     /// <summary>

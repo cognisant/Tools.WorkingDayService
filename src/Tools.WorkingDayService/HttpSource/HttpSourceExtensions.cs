@@ -2,7 +2,7 @@
 // Copyright (c) Cognisant. All rights reserved.
 // </copyright>
 
-namespace CR.WorkingDayService.HttpSource
+namespace CR.Tools.WorkingDayService.HttpSource
 {
     using System;
     using System.Net.Http;

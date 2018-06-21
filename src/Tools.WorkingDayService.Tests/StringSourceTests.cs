@@ -2,12 +2,12 @@
 // Copyright (c) Cognisant. All rights reserved.
 // </copyright>
 
-namespace CR.WorkingDayService.Tests
+namespace CR.Tools.WorkingDayService.Tests
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using CR.WorkingDayService.StringSource;
+    using CR.Tools.WorkingDayService.StringSource;
     using NUnit.Framework;
 
     /// <summary>

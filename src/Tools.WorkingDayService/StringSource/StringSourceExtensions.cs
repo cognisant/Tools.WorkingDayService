@@ -2,7 +2,7 @@
 // Copyright (c) Cognisant. All rights reserved.
 // </copyright>
 
-namespace CR.WorkingDayService.StringSource
+namespace CR.Tools.WorkingDayService.StringSource
 {
     using System;
 

@@ -27,7 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CR.WorkingDayService\CR.WorkingDayService.csproj" />
+    <ProjectReference Include="..\Tools.WorkingDayService\Tools.WorkingDayService.csproj" />
   </ItemGroup>
 
 </Project>

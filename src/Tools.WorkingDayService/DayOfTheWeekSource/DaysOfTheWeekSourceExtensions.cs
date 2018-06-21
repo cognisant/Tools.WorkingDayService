@@ -2,7 +2,7 @@
 // Copyright (c) Cognisant. All rights reserved.
 // </copyright>
 
-namespace CR.WorkingDayService.DayOfTheWeekSource
+namespace CR.Tools.WorkingDayService.DayOfTheWeekSource
 {
     using System;
     using System.Collections.Generic;

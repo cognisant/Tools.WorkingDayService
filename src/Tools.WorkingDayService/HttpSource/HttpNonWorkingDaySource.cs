@@ -2,12 +2,12 @@
 // Copyright (c) Cognisant. All rights reserved.
 // </copyright>
 
-namespace CR.WorkingDayService.HttpSource
+namespace CR.Tools.WorkingDayService.HttpSource
 {
     using System;
     using System.Net.Http;
     using System.Threading;
-    using StringSource;
+    using CR.Tools.WorkingDayService.StringSource;
 
     /// <inheritdoc cref="StringNonWorkingDaySource{T}" />
     /// <inheritdoc cref="IDisposable"/>
