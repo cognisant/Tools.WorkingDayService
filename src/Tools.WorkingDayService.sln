@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2000
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CR.WorkingDayService", "CR.WorkingDayService\CR.WorkingDayService.csproj", "{92832210-9830-4C9C-A9EA-421F30DF49C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tools.WorkingDayService", "Tools.WorkingDayService\Tools.WorkingDayService.csproj", "{92832210-9830-4C9C-A9EA-421F30DF49C3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CR.WorkingDayService.Tests", "CR.WorkingDayService.Tests\CR.WorkingDayService.Tests.csproj", "{61B36584-3EA2-4E8F-A4AE-DC8FED9CACF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tools.WorkingDayService.Tests", "Tools.WorkingDayService.Tests\Tools.WorkingDayService.Tests.csproj", "{61B36584-3EA2-4E8F-A4AE-DC8FED9CACF2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
