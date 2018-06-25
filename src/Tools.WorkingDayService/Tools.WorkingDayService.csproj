@@ -9,7 +9,7 @@
     <PackageLicenseUrl>https://github.com/cognisant/Tools.WorkingDayService/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/cognisant/Tools.WorkingDayService</PackageProjectUrl>
     <RepositoryUrl>https://github.com/cognisant/Tools.WorkingDayService</RepositoryUrl>
-    <PackageIconUrl>https://github.com/cognisant/Tools.WorkingDayService/blob/master/logo.png</PackageIconUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/cognisant/Tools.WorkingDayService/master/logo.png</PackageIconUrl>
     <PackageTags>Cognisant, Working Day</PackageTags>
     <PackageId>CR.Tools.WorkingDayService</PackageId>
     <PackageReleaseNotes>https://GitHub.com/Cognisant/Tools.WorkingDayService/releases/tag/$(Tag)</PackageReleaseNotes>
