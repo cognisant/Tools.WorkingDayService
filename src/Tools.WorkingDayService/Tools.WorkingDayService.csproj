@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Cognisant Research</Authors>
+    <Company>Cognisant Research</Company>
+    <Description>A tool which provides information about working &amp; non-working days based on a range of rules and sources.</Description>
+    <Copyright>Cognisant Research 2018</Copyright>
+    <PackageLicenseUrl>https://github.com/cognisant/Tools.WorkingDayService/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/cognisant/Tools.WorkingDayService</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/cognisant/Tools.WorkingDayService</RepositoryUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/cognisant/Tools.WorkingDayService/master/logo.png</PackageIconUrl>
+    <PackageTags>Cognisant, Working Day</PackageTags>
+    <PackageId>CR.Tools.WorkingDayService</PackageId>
+    <PackageReleaseNotes>https://GitHub.com/Cognisant/Tools.WorkingDayService/releases/tag/$(Tag)</PackageReleaseNotes>
+    <AssemblyName>CR.Tools.WorkingDayService</AssemblyName>
+    <RootNamespace>CR.Tools.WorkingDayService</RootNamespace>
+    <Product>CR.Tools</Product>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <DocumentationFile>bin\Debug\netstandard2.0\CR.Tools.WorkingDayService.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <DocumentationFile>bin\Release\netstandard2.0\CR.Tools.WorkingDayService.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CR.CodeStyle.CSharp.Full" Version="[1.0.1,2.0.0-0)">
+		<PrivateAssets>All</PrivateAssets>
+	</PackageReference>
+    <PackageReference Include="Newtonsoft.Json" Version="[11.0.1,12.0.0-a)" />
+  </ItemGroup>
+
+</Project>
