@@ -67,8 +67,10 @@ namespace CR.Tools.WorkingDayService.HttpSource.GovUkJsonSource
                 [DataContract]
                 public sealed class Event
                 {
+                    public DateTime Date => DateTime.Parse(DateString);
+
                     [DataMember(Name = "date")]
-                    public DateTime Date { get; set; }
+                    public string DateString { get; set; }
                 }
             }
         }
