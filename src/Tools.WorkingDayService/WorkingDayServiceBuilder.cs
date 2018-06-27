@@ -28,7 +28,7 @@ namespace CR.Tools.WorkingDayService
         public static implicit operator WorkingDayService(WorkingDayServiceBuilder builder)
         {
             var sources = builder._sources;
-            if (sources == null || sources.Count > 0)
+            if (sources == null || sources.Count == 0)
             {
                 throw new ArgumentException("Tried to build a WorkingDayService with no sources.", nameof(sources));
             }
