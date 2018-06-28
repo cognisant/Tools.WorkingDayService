@@ -18,13 +18,17 @@ namespace CR.Tools.WorkingDayService.Tests
         /// Test to check that a Working Day Service with one Source considers a Working Day a Working Day.
         /// </summary>
         [Test]
-        public static void WorkingDayServiceWithOneSourceReturnsFalseWhenIsWorkingDayIsNonWorkingDayCalledOnAWorkingDay() => Assert.IsTrue(((WorkingDayService)WorkingDayServiceBuilder.New().AddDaysOfTheWeekNonWorkingDaySource(DayOfWeek.Monday)).IsWorkingDay(new DateTime(2018, 5, 15)));
+        public static void WorkingDayServiceWithOneSourceReturnsFalseWhenIsWorkingDayIsNonWorkingDayCalledOnAWorkingDay()
+            => Assert.IsTrue(((WorkingDayService)WorkingDayServiceBuilder.New().AddDaysOfTheWeekNonWorkingDaySource(DayOfWeek.Monday))
+                .IsWorkingDay(new DateTime(2018, 5, 15)));
 
         /// <summary>
         /// Test to check that a Working Day Service with one Source considers a non-Working Day a non-Working Day.
         /// </summary>
         [Test]
-        public static void WorkingDayServiceWithOneSourceReturnsTrueWhenIsNonWorkingDayIsCalledOnANonWorkingDay() => Assert.IsTrue(((WorkingDayService)WorkingDayServiceBuilder.New().AddDaysOfTheWeekNonWorkingDaySource(DayOfWeek.Monday)).IsNonWorkingDay(new DateTime(2018, 5, 14)));
+        public static void WorkingDayServiceWithOneSourceReturnsTrueWhenIsNonWorkingDayIsCalledOnANonWorkingDay()
+            => Assert.IsTrue(((WorkingDayService)WorkingDayServiceBuilder.New().AddDaysOfTheWeekNonWorkingDaySource(DayOfWeek.Monday))
+                .IsNonWorkingDay(new DateTime(2018, 5, 14)));
 
         /// <summary>
         /// Test to check that a Working Day Service with multiple Sources only considers a date a Working Day when none of its sources consider it a non-Working Day.
@@ -32,7 +36,10 @@ namespace CR.Tools.WorkingDayService.Tests
         [Test]
         public static void WorkingDayServiceWithMultipleSourcesReturnsFalseForAnyDayNotConsideredAWorkingDayByAllSourcesPassedToIsNonWorkingDay()
         {
-            WorkingDayService workingDayService = WorkingDayServiceBuilder.New().AddDaysOfTheWeekNonWorkingDaySource(DayOfWeek.Monday).AddDaysOfTheWeekNonWorkingDaySource(DayOfWeek.Tuesday);
+            WorkingDayService workingDayService = WorkingDayServiceBuilder.New()
+                .AddDaysOfTheWeekNonWorkingDaySource(DayOfWeek.Monday)
+                .AddDaysOfTheWeekNonWorkingDaySource(DayOfWeek.Tuesday);
+
             Assert.IsFalse(workingDayService.IsWorkingDay(new DateTime(2018, 5, 14)));
             Assert.IsFalse(workingDayService.IsWorkingDay(new DateTime(2018, 5, 15)));
         }
@@ -43,7 +50,10 @@ namespace CR.Tools.WorkingDayService.Tests
         [Test]
         public static void WorkingDayServiceWithMultipleSourcesReturnsTrueForAnyDayNotConsideredAWorkingDayByAtLeastOneSourcePassedToIsNonWorkingDay()
         {
-            WorkingDayService workingDayService = WorkingDayServiceBuilder.New().AddDaysOfTheWeekNonWorkingDaySource(DayOfWeek.Monday).AddDaysOfTheWeekNonWorkingDaySource(DayOfWeek.Tuesday);
+            WorkingDayService workingDayService = WorkingDayServiceBuilder.New()
+                .AddDaysOfTheWeekNonWorkingDaySource(DayOfWeek.Monday)
+                .AddDaysOfTheWeekNonWorkingDaySource(DayOfWeek.Tuesday);
+
             Assert.IsTrue(workingDayService.IsNonWorkingDay(new DateTime(2018, 5, 14)));
             Assert.IsTrue(workingDayService.IsNonWorkingDay(new DateTime(2018, 5, 15)));
         }

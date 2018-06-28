@@ -2,7 +2,6 @@
 // Copyright (c) Cognisant. All rights reserved.
 // </copyright>
 
-
 namespace CR.Tools.WorkingDayService.Tests
 {
     using System;
@@ -15,7 +14,8 @@ namespace CR.Tools.WorkingDayService.Tests
     [TestFixture]
     public class WorkingDayServiceAddWorkingDayTests
     {
-        private static readonly WorkingDayService WorkingDayService = WorkingDayServiceBuilder.New().AddDaysOfTheWeekNonWorkingDaySource(DayOfWeek.Monday).AddDaysOfTheWeekNonWorkingDaySource(DayOfWeek.Tuesday);
+        private static readonly WorkingDayService WorkingDayService =
+            WorkingDayServiceBuilder.New().AddDaysOfTheWeekNonWorkingDaySource(DayOfWeek.Monday).AddDaysOfTheWeekNonWorkingDaySource(DayOfWeek.Tuesday);
 
         /// <summary>
         /// Test to ensure that NextWorkingDay returns the correct DateTime (next working day date).

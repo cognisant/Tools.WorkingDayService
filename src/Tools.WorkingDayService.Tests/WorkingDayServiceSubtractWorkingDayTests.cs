@@ -14,7 +14,8 @@ namespace CR.Tools.WorkingDayService.Tests
     [TestFixture]
     public class WorkingDayServiceSubtractWorkingDayTests
     {
-        private static readonly WorkingDayService WorkingDayService = WorkingDayServiceBuilder.New().AddDaysOfTheWeekNonWorkingDaySource(DayOfWeek.Monday).AddDaysOfTheWeekNonWorkingDaySource(DayOfWeek.Tuesday);
+        private static readonly WorkingDayService WorkingDayService =
+            WorkingDayServiceBuilder.New().AddDaysOfTheWeekNonWorkingDaySource(DayOfWeek.Monday).AddDaysOfTheWeekNonWorkingDaySource(DayOfWeek.Tuesday);
 
         /// <summary>
         /// Test to ensure that PreviousWorkingDay returns the correct DateTime (previous working day date).
