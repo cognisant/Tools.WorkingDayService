@@ -23,6 +23,15 @@ namespace CR.Tools.WorkingDayService.DayOfTheWeekSource
         public static WorkingDayServiceBuilder AddDaysOfTheWeekNonWorkingDaySource(this WorkingDayServiceBuilder builder, IEnumerable<DayOfWeek> workingDays) => builder.WithSource(new DaysOfTheWeekNonWorkingDaySource(workingDays));
 
         /// <summary>
+        /// Configures the <see cref="WorkingDayServiceBuilder"/> to use a <see cref="DaysOfTheWeekNonWorkingDaySource"/> which considers the provided days to be Non-Working days, as well as any previously configured sources.
+        /// </summary>
+        /// <param name="builder">The Builder to configure.</param>
+        /// <param name="workingDays">The days to consider Non-Working Days.</param>
+        /// <returns>The same instance of a <see cref="WorkingDayServiceBuilder"/> using the new <see cref="DaysOfTheWeekNonWorkingDaySource"/> configured with the provided days, as well as any previously configured <see cref="NonWorkingDaySource"/>s.</returns>
+        // ReSharper disable once UnusedMember.Global
+        public static WorkingDayServiceBuilder AddDaysOfTheWeekNonWorkingDaySource(this WorkingDayServiceBuilder builder, params DayOfWeek[] workingDays) => builder.WithSource(new DaysOfTheWeekNonWorkingDaySource(workingDays));
+
+        /// <summary>
         /// Configures the <see cref="WorkingDayServiceBuilder"/> to use a <see cref="DaysOfTheWeekNonWorkingDaySource"/> which considers Monday -> Friday Working Days, and Saturday and Sunday to be Non-Working Days, as well as any previously configured <see cref="NonWorkingDaySource"/>s.
         /// </summary>
         /// <param name="builder">The Builder to configure.</param>

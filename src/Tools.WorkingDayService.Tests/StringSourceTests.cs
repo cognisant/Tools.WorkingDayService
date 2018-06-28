@@ -7,7 +7,7 @@ namespace CR.Tools.WorkingDayService.Tests
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using CR.Tools.WorkingDayService.StringSource;
+    using StringSource;
     using NUnit.Framework;
 
     /// <summary>
@@ -16,8 +16,7 @@ namespace CR.Tools.WorkingDayService.Tests
     [TestFixture]
     public class StringSourceTests
     {
-        private static readonly WorkingDayService WorkingDayService = new WorkingDayService(new List<NonWorkingDaySource> { new StringNonWorkingDaySource<IReadOnlyList<DateTime>>("2018/05/14,2018/05/15", ParseMethod, CheckMethod) });
-
+        private static readonly WorkingDayService WorkingDayService = WorkingDayServiceBuilder.New().AddStringSource("2018/05/14,2018/05/15", ParseMethod, CheckMethod);
         /// <summary>
         /// Checks that a Working Day Service with a String Source's IsWorkingDay method returns true when passed a working day.
         /// </summary>

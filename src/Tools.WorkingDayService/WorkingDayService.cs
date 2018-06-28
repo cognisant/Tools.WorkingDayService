@@ -20,7 +20,7 @@ namespace CR.Tools.WorkingDayService
         /// Initializes a new instance of the <see cref="WorkingDayService"/> class using the provided <see cref="NonWorkingDaySource"/>s.
         /// </summary>
         /// <param name="sources">The <see cref="NonWorkingDaySource"/>s to use to determine whether a given <see cref="DateTime"/> is on a working day, or a non-working day.</param>
-        public WorkingDayService(IReadOnlyCollection<NonWorkingDaySource> sources) => _sources = sources;
+        internal WorkingDayService(IReadOnlyCollection<NonWorkingDaySource> sources) => _sources = sources;
 
         /// <inheritdoc />
         /// <summary>
