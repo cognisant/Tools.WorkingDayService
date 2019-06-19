@@ -5,7 +5,7 @@
 namespace CR.Tools.WorkingDayService.Tests
 {
     using System;
-    using CR.Tools.WorkingDayService.HttpSource.GovUkJsonSource;
+    using HttpSource.GovUkJsonSource;
     using NUnit.Framework;
 
     /// <summary>

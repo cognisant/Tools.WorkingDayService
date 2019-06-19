@@ -7,7 +7,7 @@ namespace CR.Tools.WorkingDayService.HttpSource
     using System;
     using System.Net.Http;
     using System.Threading;
-    using CR.Tools.WorkingDayService.StringSource;
+    using StringSource;
 
     /// <inheritdoc cref="StringNonWorkingDaySource{T}" />
     /// <inheritdoc cref="IDisposable"/>

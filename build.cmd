@@ -11,3 +11,4 @@ dotnet test .\src\Tools.WorkingDayService.Tests\Tools.WorkingDayService.Tests.cs
 if %errorlevel% neq 0 exit /b %errorlevel%
 
 dotnet pack .\src\Tools.WorkingDayService\Tools.WorkingDayService.csproj -o ..\..\dist -p:Version="%VERSION%" -p:PackageVersion="%VERSION%" -p:Tag="%TAG%" -c Release
+exit /b %errorlevel%
