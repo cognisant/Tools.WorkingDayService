@@ -10,13 +10,13 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\netcoreapp2.0\CR.WorkingDayService.Tests.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\netcoreapp2.0\CorshamScience.WorkingDayService.Tests.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <WarningsAsErrors />
-    <DocumentationFile>bin\Release\netcoreapp2.0\CR.WorkingDayService.Tests.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\netcoreapp2.0\CorshamScience.WorkingDayService.Tests.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

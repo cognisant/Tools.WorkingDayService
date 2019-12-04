@@ -23,13 +23,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <WarningsAsErrors />
-    <DocumentationFile>bin\Debug\netstandard2.0\CR.Tools.WorkingDayService.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\netstandard2.0\CorshamScience.Tools.WorkingDayService.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <WarningsAsErrors />
-    <DocumentationFile>bin\Release\netstandard2.0\CR.Tools.WorkingDayService.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\netstandard2.0\CorshamScience.Tools.WorkingDayService.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
