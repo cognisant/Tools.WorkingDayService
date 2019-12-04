@@ -1,8 +1,8 @@
-﻿// <copyright file="GovUkBankHolidayJsonSourceExtensions.cs" company="Cognisant">
-// Copyright (c) Cognisant. All rights reserved.
+﻿// <copyright file="GovUkBankHolidayJsonSourceExtensions.cs" company="Corsham Science">
+// Copyright (c) Corsham Science. All rights reserved.
 // </copyright>
 
-namespace CR.Tools.WorkingDayService.HttpSource.GovUkJsonSource
+namespace CorshamScience.Tools.WorkingDayService.HttpSource.GovUkJsonSource
 {
     using System;
     using System.Collections.Generic;

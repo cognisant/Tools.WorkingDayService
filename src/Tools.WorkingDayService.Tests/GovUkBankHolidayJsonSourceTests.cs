@@ -1,11 +1,11 @@
-﻿// <copyright file="GovUkBankHolidayJsonSourceTests.cs" company="Cognisant">
-// Copyright (c) Cognisant. All rights reserved.
+﻿// <copyright file="GovUkBankHolidayJsonSourceTests.cs" company="Corsham Science">
+// Copyright (c) Corsham Science. All rights reserved.
 // </copyright>
 
-namespace CR.Tools.WorkingDayService.Tests
+namespace CorshamScience.Tools.WorkingDayService.Tests
 {
     using System;
-    using HttpSource.GovUkJsonSource;
+    using CorshamScience.Tools.WorkingDayService.HttpSource.GovUkJsonSource;
     using NUnit.Framework;
 
     /// <summary>

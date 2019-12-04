@@ -1,8 +1,8 @@
-﻿// <copyright file="HttpSourceExtensions.cs" company="Cognisant">
-// Copyright (c) Cognisant. All rights reserved.
+﻿// <copyright file="HttpSourceExtensions.cs" company="Corsham Science">
+// Copyright (c) Corsham Science. All rights reserved.
 // </copyright>
 
-namespace CR.Tools.WorkingDayService.HttpSource
+namespace CorshamScience.Tools.WorkingDayService.HttpSource
 {
     using System;
     using System.Net.Http;

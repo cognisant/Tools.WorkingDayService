@@ -1,12 +1,12 @@
-﻿// <copyright file="FileNonWorkingDaySource.cs" company="Cognisant">
-// Copyright (c) Cognisant. All rights reserved.
+﻿// <copyright file="FileNonWorkingDaySource.cs" company="Corsham Science">
+// Copyright (c) Corsham Science. All rights reserved.
 // </copyright>
 
-namespace CR.Tools.WorkingDayService.FileSource
+namespace CorshamScience.Tools.WorkingDayService.FileSource
 {
     using System;
     using System.IO;
-    using StringSource;
+    using CorshamScience.Tools.WorkingDayService.StringSource;
 
     /// <inheritdoc cref="StringNonWorkingDaySource{T}"/>
     /// <inheritdoc cref="IDisposable"/>

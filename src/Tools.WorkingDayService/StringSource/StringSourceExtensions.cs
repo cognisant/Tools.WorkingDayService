@@ -1,8 +1,8 @@
-﻿// <copyright file="StringSourceExtensions.cs" company="Cognisant">
-// Copyright (c) Cognisant. All rights reserved.
+﻿// <copyright file="StringSourceExtensions.cs" company="Corsham Science">
+// Copyright (c) Corsham Science. All rights reserved.
 // </copyright>
 
-namespace CR.Tools.WorkingDayService.StringSource
+namespace CorshamScience.Tools.WorkingDayService.StringSource
 {
     using System;
 

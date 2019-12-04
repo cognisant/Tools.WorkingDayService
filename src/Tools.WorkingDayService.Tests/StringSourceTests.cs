@@ -1,14 +1,14 @@
-﻿// <copyright file="StringSourceTests.cs" company="Cognisant">
-// Copyright (c) Cognisant. All rights reserved.
+﻿// <copyright file="StringSourceTests.cs" company="Corsham Science">
+// Copyright (c) Corsham Science. All rights reserved.
 // </copyright>
 
-namespace CR.Tools.WorkingDayService.Tests
+namespace CorshamScience.Tools.WorkingDayService.Tests
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using CorshamScience.Tools.WorkingDayService.StringSource;
     using NUnit.Framework;
-    using StringSource;
 
     /// <summary>
     /// Tests for the String Working Day Source.
@@ -16,7 +16,7 @@ namespace CR.Tools.WorkingDayService.Tests
     [TestFixture]
     public class StringSourceTests
     {
-        private static readonly WorkingDayService WorkingDayService = WorkingDayServiceBuilder.New().AddStringSource("2018/05/14,2018/05/15", ParseMethod, CheckMethod);
+        private static readonly CorshamScience.Tools.WorkingDayService.WorkingDayService WorkingDayService = WorkingDayServiceBuilder.New().AddStringSource("2018/05/14,2018/05/15", ParseMethod, CheckMethod);
 
         /// <summary>
         /// Checks that a Working Day Service with a String Source's IsWorkingDay method returns true when passed a working day.

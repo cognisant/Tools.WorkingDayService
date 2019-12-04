@@ -1,8 +1,8 @@
-﻿// <copyright file="WorkingDayServiceBuilder.cs" company="Cognisant">
-// Copyright (c) Cognisant. All rights reserved.
+﻿// <copyright file="WorkingDayServiceBuilder.cs" company="Corsham Science">
+// Copyright (c) Corsham Science. All rights reserved.
 // </copyright>
 
-namespace CR.Tools.WorkingDayService
+namespace CorshamScience.Tools.WorkingDayService
 {
     using System;
     using System.Collections.Generic;

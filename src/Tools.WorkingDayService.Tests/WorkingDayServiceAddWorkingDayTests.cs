@@ -1,11 +1,11 @@
-﻿// <copyright file="WorkingDayServiceAddWorkingDayTests.cs" company="Cognisant">
-// Copyright (c) Cognisant. All rights reserved.
+﻿// <copyright file="WorkingDayServiceAddWorkingDayTests.cs" company="Corsham Science">
+// Copyright (c) Corsham Science. All rights reserved.
 // </copyright>
 
-namespace CR.Tools.WorkingDayService.Tests
+namespace CorshamScience.Tools.WorkingDayService.Tests
 {
     using System;
-    using DayOfTheWeekSource;
+    using CorshamScience.Tools.WorkingDayService.DayOfTheWeekSource;
     using NUnit.Framework;
 
     /// <summary>
@@ -14,7 +14,7 @@ namespace CR.Tools.WorkingDayService.Tests
     [TestFixture]
     public class WorkingDayServiceAddWorkingDayTests
     {
-        private static readonly WorkingDayService WorkingDayService =
+        private static readonly CorshamScience.Tools.WorkingDayService.WorkingDayService WorkingDayService =
             WorkingDayServiceBuilder.New().AddDaysOfTheWeekNonWorkingDaySource(DayOfWeek.Monday).AddDaysOfTheWeekNonWorkingDaySource(DayOfWeek.Tuesday);
 
         /// <summary>
