@@ -1,8 +1,8 @@
-﻿// <copyright file="FileSourceExtensions.cs" company="Cognisant">
-// Copyright (c) Cognisant. All rights reserved.
+﻿// <copyright file="FileSourceExtensions.cs" company="Corsham Science">
+// Copyright (c) Corsham Science. All rights reserved.
 // </copyright>
 
-namespace CR.Tools.WorkingDayService.FileSource
+namespace CorshamScience.Tools.WorkingDayService.FileSource
 {
     using System;
 

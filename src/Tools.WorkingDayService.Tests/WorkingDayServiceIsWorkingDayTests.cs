@@ -1,11 +1,11 @@
-﻿// <copyright file="WorkingDayServiceIsWorkingDayTests.cs" company="Cognisant">
-// Copyright (c) Cognisant. All rights reserved.
+﻿// <copyright file="WorkingDayServiceIsWorkingDayTests.cs" company="Corsham Science">
+// Copyright (c) Corsham Science. All rights reserved.
 // </copyright>
 
-namespace CR.Tools.WorkingDayService.Tests
+namespace CorshamScience.Tools.WorkingDayService.Tests
 {
     using System;
-    using DayOfTheWeekSource;
+    using CorshamScience.Tools.WorkingDayService.DayOfTheWeekSource;
     using NUnit.Framework;
 
     /// <summary>
@@ -21,7 +21,7 @@ namespace CR.Tools.WorkingDayService.Tests
         public static void WorkingDayServiceWithNoSourcesThrowsArgumentException()
             => Assert.Throws<ArgumentException>(() =>
             { // ReSharper disable once UnusedVariable
-                WorkingDayService workingDayService = WorkingDayServiceBuilder.New();
+                CorshamScience.Tools.WorkingDayService.WorkingDayService workingDayService = WorkingDayServiceBuilder.New();
             });
 
         /// <summary>
@@ -29,7 +29,7 @@ namespace CR.Tools.WorkingDayService.Tests
         /// </summary>
         [Test]
         public static void WorkingDayServiceWithOneSourceReturnsTrueWhenIsWorkingDayIsCalledOnAWorkingDay()
-            => Assert.IsTrue(((WorkingDayService)WorkingDayServiceBuilder.New().AddDaysOfTheWeekNonWorkingDaySource(DayOfWeek.Monday))
+            => Assert.IsTrue(((CorshamScience.Tools.WorkingDayService.WorkingDayService)WorkingDayServiceBuilder.New().AddDaysOfTheWeekNonWorkingDaySource(DayOfWeek.Monday))
                 .IsWorkingDay(new DateTime(2018, 5, 15)));
 
         /// <summary>
@@ -37,7 +37,7 @@ namespace CR.Tools.WorkingDayService.Tests
         /// </summary>
         [Test]
         public static void WorkingDayServiceWithOneSourceReturnsFalseWhenIsWorkingDayIsCalledOnANonWorkingDay()
-            => Assert.IsTrue(((WorkingDayService)WorkingDayServiceBuilder.New().AddDaysOfTheWeekNonWorkingDaySource(DayOfWeek.Monday))
+            => Assert.IsTrue(((CorshamScience.Tools.WorkingDayService.WorkingDayService)WorkingDayServiceBuilder.New().AddDaysOfTheWeekNonWorkingDaySource(DayOfWeek.Monday))
                 .IsNonWorkingDay(new DateTime(2018, 5, 14)));
 
         /// <summary>
@@ -46,7 +46,7 @@ namespace CR.Tools.WorkingDayService.Tests
         [Test]
         public static void WorkingDayServiceWithMultipleSourcesReturnsTrueForAnyDayConsideredAWorkingDayByAtLeastOneSourcePassedToIsNonWorkingDay()
         {
-            WorkingDayService workingDayService = WorkingDayServiceBuilder.New()
+            CorshamScience.Tools.WorkingDayService.WorkingDayService workingDayService = WorkingDayServiceBuilder.New()
                 .AddDaysOfTheWeekNonWorkingDaySource(DayOfWeek.Monday)
                 .AddDaysOfTheWeekNonWorkingDaySource(DayOfWeek.Tuesday);
 
@@ -60,7 +60,7 @@ namespace CR.Tools.WorkingDayService.Tests
         [Test]
         public static void WorkingDayServiceWithMultipleSourcesReturnsFalseForAnyDayConsideredAWorkingDayByAtLeastOneSourcePassedToIsWorkingDay()
         {
-            WorkingDayService workingDayService = WorkingDayServiceBuilder.New()
+            CorshamScience.Tools.WorkingDayService.WorkingDayService workingDayService = WorkingDayServiceBuilder.New()
                 .AddDaysOfTheWeekNonWorkingDaySource(DayOfWeek.Monday)
                 .AddDaysOfTheWeekNonWorkingDaySource(DayOfWeek.Tuesday);
 

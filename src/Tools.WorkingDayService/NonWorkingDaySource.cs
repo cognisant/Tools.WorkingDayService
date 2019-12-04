@@ -1,8 +1,8 @@
-﻿// <copyright file="NonWorkingDaySource.cs" company="Cognisant">
-// Copyright (c) Cognisant. All rights reserved.
+﻿// <copyright file="NonWorkingDaySource.cs" company="Corsham Science">
+// Copyright (c) Corsham Science. All rights reserved.
 // </copyright>
 
-namespace CR.Tools.WorkingDayService
+namespace CorshamScience.Tools.WorkingDayService
 {
     using System;
 
@@ -15,7 +15,7 @@ namespace CR.Tools.WorkingDayService
         /// Checks whether the provided <see cref="DateTime"/> is on a Non-Working Day.
         /// </summary>
         /// <param name="date">The <see cref="DateTime"/> to check is on a non-working day.</param>
-        /// <returns><c>true</c> if the provided <see cref="DateTime"/> is on a Non-Working Day, and <c>false</c> if it is on a Working Day</returns>
+        /// <returns><c>true</c> if the provided <see cref="DateTime"/> is on a Non-Working Day, and <c>false</c> if it is on a Working Day.</returns>
         public abstract bool IsNonWorkingDay(DateTime date);
 
         /// <summary>
