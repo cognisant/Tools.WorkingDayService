@@ -2,20 +2,21 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Authors>Cognisant Research</Authors>
-    <Company>Cognisant Research</Company>
+    <Authors>Corsham Science</Authors>
+    <Company>Corsham Science</Company>
     <Description>A tool which provides information about working &amp; non-working days based on a range of rules and sources.</Description>
-    <Copyright>Cognisant Research 2018</Copyright>
-    <PackageLicenseUrl>https://github.com/cognisant/Tools.WorkingDayService/blob/master/LICENSE</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/cognisant/Tools.WorkingDayService</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/cognisant/Tools.WorkingDayService</RepositoryUrl>
-    <PackageIconUrl>https://raw.githubusercontent.com/cognisant/Tools.WorkingDayService/master/logo.png</PackageIconUrl>
-    <PackageTags>Cognisant, Working Day</PackageTags>
-    <PackageId>CR.Tools.WorkingDayService</PackageId>
-    <PackageReleaseNotes>https://GitHub.com/Cognisant/Tools.WorkingDayService/releases/tag/$(Tag)</PackageReleaseNotes>
-    <AssemblyName>CR.Tools.WorkingDayService</AssemblyName>
-    <RootNamespace>CR.Tools.WorkingDayService</RootNamespace>
-    <Product>CR.Tools</Product>
+    <Copyright>Corsham Science 2019</Copyright>
+    <PackageLicenseUrl></PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/qphl/Tools.WorkingDayService</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/qphl/Tools.WorkingDayService</RepositoryUrl>
+    <PackageIconUrl></PackageIconUrl>
+    <PackageTags>Corsham Science, Working Day</PackageTags>
+    <PackageId>CorshamScience.Tools.WorkingDayService</PackageId>
+    <PackageReleaseNotes>https://GitHub.com/qphl/Tools.WorkingDayService/releases/tag/</PackageReleaseNotes>
+    <AssemblyName>CorshamScience.Tools.WorkingDayService</AssemblyName>
+    <RootNamespace>CorshamScience.Tools.WorkingDayService</RootNamespace>
+    <Product>CorshamScience.Tools</Product>
+    <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -31,9 +32,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="CR.CodeStyle.CSharp.Full" Version="[1.0.1,2.0.0-0)">
-		<PrivateAssets>All</PrivateAssets>
-	</PackageReference>
+    <PackageReference Include="CorshamScience.CodeStyle.CSharp.Full" Version="3.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
 </Project>
